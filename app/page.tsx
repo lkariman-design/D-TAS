@@ -56,6 +56,26 @@ export default function Home() {
       </Link>
       <p className="text-blue-300/70 text-xs mt-4">No account needed · Results in minutes</p>
 
+      {/* Documentation links */}
+      <div className="flex gap-3 mt-8">
+        <Link href="/docs/functional"
+          className="flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 border border-white/20 text-white text-sm hover:bg-white/20 transition-all hover:scale-105">
+          <span className="text-lg">📋</span>
+          <div className="text-left">
+            <div className="font-semibold heading text-sm">Functional Document</div>
+            <div className="text-blue-300 text-xs">What the system does</div>
+          </div>
+        </Link>
+        <Link href="/docs/technical"
+          className="flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 border border-white/20 text-white text-sm hover:bg-white/20 transition-all hover:scale-105">
+          <span className="text-lg">⚙️</span>
+          <div className="text-left">
+            <div className="font-semibold heading text-sm">Technical Design</div>
+            <div className="text-blue-300 text-xs">How it&apos;s built</div>
+          </div>
+        </Link>
+      </div>
+
       <DemoLinks />
     </main>
   );
