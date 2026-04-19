@@ -1,0 +1,1532 @@
+{
+  "dimensions": [
+    {
+      "code": "D1",
+      "label": "Strategy & Leadership",
+      "n_questions": 15
+    },
+    {
+      "code": "D2",
+      "label": "Operations & Supply Chain",
+      "n_questions": 15
+    },
+    {
+      "code": "D3",
+      "label": "Sales & Marketing",
+      "n_questions": 15
+    },
+    {
+      "code": "D4",
+      "label": "Technology & Infrastructure",
+      "n_questions": 15
+    },
+    {
+      "code": "D5",
+      "label": "Skills & Capabilities",
+      "n_questions": 15
+    }
+  ],
+  "total_questions": 75,
+  "questions": [
+    {
+      "id": "D1_Q1",
+      "dim_code": "D1",
+      "dimension": "Strategy & Leadership",
+      "group": "Internal Readiness (Vision, Leadership, Governance)",
+      "question": "How clearly have you or your leadership thought about the role of digital tools or systems in growing your business?",
+      "options": {
+        "O1": "We haven’t really thought about using digital to grow the business yet.",
+        "O2": "We know it’s important, but haven’t connected it clearly to our business goals",
+        "O3": "We’re starting to think seriously about it and exploring specific actions.",
+        "O4": "Using digital tools is already part of how we plan and run the business."
+      },
+      "insights": {
+        "I1": "Not thinking about digital early can make it harder to compete, especially as others move faster.",
+        "I2": "Knowing it’s important is a good start, but without a plan, opportunities for growth or cost savings may be missed.",
+        "I3": "You’re moving in the right direction—turning ideas into clear actions will unlock real results.",
+        "I4": "You’re using digital to drive your growth and are well-placed to move faster than your competitors."
+      },
+      "tag": "Digital Transformation Understanding"
+    },
+    {
+      "id": "D1_Q2",
+      "dim_code": "D1",
+      "dimension": "Strategy & Leadership",
+      "group": "Internal Readiness (Vision, Leadership, Governance)",
+      "question": "How involved are you—or your team—in actively moving digital transformation forward in your business?",
+      "options": {
+        "O1": "Digital topics rarely come up when decisions are made",
+        "O2": "We acknowledge digital is important but haven’t taken direct steps yet",
+        "O3": "We’ve started exploring digital seriously, either personally or engaged and external expert",
+        "O4": "We regularly drive digital actions—discuss, review, and make decisions to move forward"
+      },
+      "insights": {
+        "I1": "Lack of leadership involvement often results in delays and missed digital opportunities.",
+        "I2": "Without consistent action, digital ideas may stay stuck at the discussion stage",
+        "I3": "Taking ownership and assigning responsibility builds momentum",
+        "I4": "Active leadership ensures digital plans turn into results"
+      },
+      "tag": "Leadership Buy-In"
+    },
+    {
+      "id": "D1_Q3",
+      "dim_code": "D1",
+      "dimension": "Strategy & Leadership",
+      "group": "Internal Readiness (Vision, Leadership, Governance)",
+      "question": "Has your company articulated and communicated a clear vision for digital transformation?",
+      "options": {
+        "O1": "There’s no defined digital vision",
+        "O2": "Some ideas exist, but not clearly shared",
+        "O3": "A vision exists and is internally communicated to key managers",
+        "O4": "We have a compelling digital vision, widely communicated and owned"
+      },
+      "insights": {
+        "I1": "Absence of vision leads to fragmented initiatives and poor team alignment.",
+        "I2": "Vision exists in silos; not widely communicated.",
+        "I3": "Team knows the vision but not yet fully aligned.",
+        "I4": "Vision is clear, shared, and mobilizing teams toward transformation."
+      },
+      "tag": "Vision & Communication"
+    },
+    {
+      "id": "D1_Q4",
+      "dim_code": "D1",
+      "dimension": "Strategy & Leadership",
+      "group": "Internal Readiness (Vision, Leadership, Governance)",
+      "question": "How is your company managing digital transformation initiatives at a governance level?",
+      "options": {
+        "O1": "No formal ownership or tracking structure in place",
+        "O2": "Occasional reviews or ad-hoc responsibility by operations/IT",
+        "O3": "A designated leader/team tracks digital initiatives periodically",
+        "O4": "A formal governance structure exists with KPIs, review cadences, and accountability"
+      },
+      "insights": {
+        "I1": "No governance risks duplication, scope creep, and lack of accountability.",
+        "I2": "Responsibility exists but no formal tracking.",
+        "I3": "Governance is evolving; reviews happen irregularly.",
+        "I4": "Governance is structured with KPIs and decision accountability."
+      },
+      "tag": "Governance Mechanism"
+    },
+    {
+      "id": "D1_Q5",
+      "dim_code": "D1",
+      "dimension": "Strategy & Leadership",
+      "group": "External Awareness (Industry, Policy, Tech, Competition, Customers)",
+      "question": "How aware are you of changes happening in your industry—like new customer demands, technologies, or competitor moves?",
+      "options": {
+        "O1": "We don’t track changes in the industry actively.",
+        "O2": "We hear about trends but don’t follow them closely.",
+        "O3": "We pay attention to trends and adjust some things based on them.",
+        "O4": "We actively track trends and use them to guide our business decisions."
+      },
+      "insights": {
+        "I1": "Staying unaware of changes can make your business vulnerable to disruption",
+        "I2": "Knowing about trends but not acting on them puts you behind faster competitors.",
+        "I3": "Following trends helps you stay relevant and avoid surprises.",
+        "I4": "Proactive awareness helps you lead change and gain a competitive edge."
+      },
+      "tag": "Industry Change Awareness"
+    },
+    {
+      "id": "D1_Q6",
+      "dim_code": "D1",
+      "dimension": "Strategy & Leadership",
+      "group": "External Awareness (Industry, Policy, Tech, Competition, Customers)",
+      "question": "How do you understand what your customers need or expect, especially as things change?",
+      "options": {
+        "O1": "We don’t have a structured way to gather customer feedback.",
+        "O2": "We rely on informal chats or complaints to understand customers.",
+        "O3": "We ask for feedback sometimes and make changes accordingly.",
+        "O4": "We have a structured Voice of Customer (VoC) or market intelligence process"
+      },
+      "insights": {
+        "I1": "Without customer insight, you risk building things people don’t want.",
+        "I2": "Relying on complaints means reacting too late.",
+        "I3": "Listening to customers helps improve service and loyalty.",
+        "I4": "Customer feedback, when used well, drives growth and innovation"
+      },
+      "tag": "Customer Insight"
+    },
+    {
+      "id": "D1_Q7",
+      "dim_code": "D1",
+      "dimension": "Strategy & Leadership",
+      "group": "External Awareness (Industry, Policy, Tech, Competition, Customers)",
+      "question": "How actively does your company track and evaluate emerging technologies relevant to your industry?",
+      "options": {
+        "O1": "We don’t' follow techology updates or know what's available",
+        "O2": "We hear about new tools but haven't explored them for ourselves",
+        "O3": "We look at what others are using and try out relevant tools",
+        "O4": "We actively explore new tech and assess how it can help us"
+      },
+      "insights": {
+        "I1": "Ignoring technology can cause your business to fall behind.",
+        "I2": "Second-hand info limits your ability to choose the right tools",
+        "I3": "Exploring tech gives you early advantage and confidence to act",
+        "I4": "Being tech-forward lets you outperform competitors and attract better customers"
+      },
+      "tag": "Technology Foresight"
+    },
+    {
+      "id": "D1_Q8",
+      "dim_code": "D1",
+      "dimension": "Strategy & Leadership",
+      "group": "External Awareness (Industry, Policy, Tech, Competition, Customers)",
+      "question": "How prepared is your company to deal with regulatory and policy changes (e.g., ESG, EPR, GST, global certifications)?",
+      "options": {
+        "O1": "We react to changes only when they become urgent",
+        "O2": "We react when others in the industry start making changes.",
+        "O3": "We monitor changes and integrate them into operations",
+        "O4": "We anticipate regulations and align strategy proactively"
+      },
+      "insights": {
+        "I1": "Being unprepared for rules can cause fines, rework, or lost business.",
+        "I2": "Following others delays your ability to act confidently",
+        "I3": "Planning ahead helps avoid disruptions and improves compliance.",
+        "I4": "Proactive alignment with policy creates trust and first-mover advantage."
+      },
+      "tag": "Policy & Compliance Awareness"
+    },
+    {
+      "id": "D1_Q9",
+      "dim_code": "D1",
+      "dimension": "Strategy & Leadership",
+      "group": "External Awareness (Industry, Policy, Tech, Competition, Customers)",
+      "question": "How clear is your understanding of your position relative to peers in terms of pricing, capabilities, and digital maturity?",
+      "options": {
+        "O1": "We haven't done any comparison or benchmarking",
+        "O2": "We have a general sense, but not detailed insight",
+        "O3": "We periodically assess competitors and compare KPIs",
+        "O4": "We track upcoming changes and stay ahead in compliance and planning"
+      },
+      "insights": {
+        "I1": "You risk stagnation if unaware of peers' digital and cost benchmarks.",
+        "I2": "Benchmarking is informal or backward-looking.",
+        "I3": "Peer comparisons are structured but infrequent.",
+        "I4": "Real-time benchmarking guides strategic moves."
+      },
+      "tag": "Competitive Positioning"
+    },
+    {
+      "id": "D1_Q10",
+      "dim_code": "D1",
+      "dimension": "Strategy & Leadership",
+      "group": "External Awareness (Industry, Policy, Tech, Competition, Customers)",
+      "question": "Does your digital strategy focus on enhancing your company‚Äôs unique positioning or market edge?",
+      "options": {
+        "O1": "We aren't using digital tools in a way that sets us apart",
+        "O2": "We use some tools, but they don't offer a major advantage",
+        "O3": "Our tools give us faster service, lower cost, or better quality",
+        "O4": "Our digital approach clearly gives us a competitive edge"
+      },
+      "insights": {
+        "I1": "Lack of clarity in USP undermines brand and customer loyalty.",
+        "I2": "Some initiatives build on USPs but lack strategy.",
+        "I3": "Differentiation is selectively reinforced by digital tools.",
+        "I4": "DT is a driver of brand, performance, and market uniqueness."
+      },
+      "tag": "Strategic Differentiation"
+    },
+    {
+      "id": "D1_Q11",
+      "dim_code": "D1",
+      "dimension": "Strategy & Leadership",
+      "group": "Strategic Planning (Roadmap, Prioritization, Frameworks)",
+      "question": "Does your organization have a formal digital transformation roadmap or phased execution plan?",
+      "options": {
+        "O1": "We haven't created a plan or discussed this yet",
+        "O2": "We have had some ideas, but nothing structured or written down",
+        "O3": "We have listed a few things we want to do and are getting started",
+        "O4": "We have a clear, phased plan with timelines and goals"
+      },
+      "insights": {
+        "I1": "No roadmap = reactive execution and wasted digital spend.",
+        "I2": "Unclear direction often leads to wasted time and scattered efforts",
+        "I3": "Even a simple plan helps you move forward with confidence.",
+        "I4": "A clear roadmap keeps everyone aligned and focused on results"
+      },
+      "tag": "Strategic Roadmap"
+    },
+    {
+      "id": "D1_Q12",
+      "dim_code": "D1",
+      "dimension": "Strategy & Leadership",
+      "group": "Strategic Planning (Roadmap, Prioritization, Frameworks)",
+      "question": "How well are digital initiatives mapped to measurable business outcomes (e.g., cost savings, new revenue, market expansion)?",
+      "options": {
+        "O1": "We are doing a few digital things, but not sure their impact on the business results",
+        "O2": "Some tools or projects support our goals, but not all and sub par results",
+        "O3": "Most things we are doing support goals like cost saving or service improvement",
+        "O4": "Every digital action we take is tied to clear business outcomes"
+      },
+      "insights": {
+        "I1": "Disconnected digital work rarely delivers value.",
+        "I2": "Partial alignment means some effort goes unnoticed or underused.",
+        "I3": "Tying work to goals improves focus and accountability",
+        "I4": "Full alignment turns digital into a growth engine, not a side project"
+      },
+      "tag": "Business Goal Alignment"
+    },
+    {
+      "id": "D1_Q13",
+      "dim_code": "D1",
+      "dimension": "Strategy & Leadership",
+      "group": "Strategic Planning (Roadmap, Prioritization, Frameworks)",
+      "question": "Do you use structured tools or models (e.g., SWOT, Industry 4.0 maturity, BMC) to guide your digital strategy?",
+      "options": {
+        "O1": "We don't use any structured methods to guide decisions",
+        "O2": "We talk through ideas but don't use any specific tool or template",
+        "O3": "We have tried using some frameworks for planning and review",
+        "O4": "We regularly use planning tools to guide digital actions and choices"
+      },
+      "insights": {
+        "I1": "Without structure, digital decisions are harder to track or repeat.",
+        "I2": "Unstructured planning can lead to missed steps or unclear priorities.",
+        "I3": "Even basic tools help you bring clarity and focus to your efforts.",
+        "I4": "Using structured tools improves decision-making and planning speed."
+      },
+      "tag": "Use of Strategic Frameworks"
+    },
+    {
+      "id": "D1_Q14",
+      "dim_code": "D1",
+      "dimension": "Strategy & Leadership",
+      "group": "Resource Commitment & Positioning",
+      "question": "How does your organization allocate financial and operational resources for digital initiatives?",
+      "options": {
+        "O1": "We haven’t planned any resources for digital work yet.",
+        "O2": "We invest in digital only when there’s an urgent need.",
+        "O3": "We have some budget or time set aside for digital each year.",
+        "O4": "We treat digital like any key function—with a clear plan and resources."
+      },
+      "insights": {
+        "I1": "Without committed resources, digital work often stays stuck.",
+        "I2": "Budgeting is reactive or fragmented. Only investing in emergencies delays real progress.",
+        "I3": "Planning ahead makes it easier to follow through on digital actions.",
+        "I4": "Dedicated resources ensure consistent and effective digital transformation."
+      },
+      "tag": "Financial Commitment"
+    },
+    {
+      "id": "D1_Q15",
+      "dim_code": "D1",
+      "dimension": "Strategy & Leadership",
+      "group": "Resource Commitment & Positioning",
+      "question": "How ready are you—financially and mentally—to invest in digital transformation?",
+      "options": {
+        "O1": "We are focused on daily operations; digital can wait",
+        "O2": "We can invest small amounts when something urgent comes up",
+        "O3": "We are financially stable and ready to support digital efforts",
+        "O4": "We are fully committed and actively investing in digital for long-term growth"
+      },
+      "insights": {
+        "I1": "No readiness means missed chances to improve or scale.",
+        "I2": "Small steps help, but may not be enough for major gains.",
+        "I3": "Financial readiness allows you to move faster than others.",
+        "I4": "Committed businesses turn digital into a real competitive advantage."
+      },
+      "tag": "Investment Readiness"
+    },
+    {
+      "id": "D2_Q1",
+      "dim_code": "D2",
+      "dimension": "Operations & Supply Chain",
+      "group": "Process Visibility & Control",
+      "question": "How do you currently track the status of production or work orders across the shop floor?",
+      "options": {
+        "O1": "We rely on paper records or verbal updates",
+        "O2": "We use spreadsheets or informal methods",
+        "O3": "We track jobs digitally, but only at key points",
+        "O4": "We have live dashboards or tools that show real-time job status"
+      },
+      "insights": {
+        "I1": "Relying on manual methods causes delays, miscommunication, and limited visibility.",
+        "I2": "Spreadsheets help slightly but often lead to delays and incomplete insights.",
+        "I3": "Tracking some key points digitally helps, but lack of full integration causes blind spots.",
+        "I4": "Live dashboards ensure full visibility and enable proactive interventions."
+      },
+      "tag": "Production Tracking"
+    },
+    {
+      "id": "D2_Q2",
+      "dim_code": "D2",
+      "dimension": "Operations & Supply Chain",
+      "group": "Process Visibility & Control",
+      "question": "How is your team monitoring and reporting key production metrics like output, downtime, or rework?",
+      "options": {
+        "O1": "We don’t track these metrics formally",
+        "O2": "We capture some numbers manually or through verbal reports",
+        "O3": "We track key metrics using Excel or basic systems",
+        "O4": "We track performance automatically and review it regularly"
+      },
+      "insights": {
+        "I1": "No consistent performance tracking leads to blind spots and poor productivity decisions.",
+        "I2": "Manual logs are effort-intensive and miss real-time trends.",
+        "I3": "Basic tracking shows trends but lacks automation for timely action.",
+        "I4": "Real-time monitoring supports continuous improvement and higher productivity."
+      },
+      "tag": "Shop-Floor Performance"
+    },
+    {
+      "id": "D2_Q3",
+      "dim_code": "D2",
+      "dimension": "Operations & Supply Chain",
+      "group": "Process Visibility & Control",
+      "question": "How do you manage your inventory levels across raw materials, WIP, and finished goods?",
+      "options": {
+        "O1": "It’s mostly based on physical checks and team memory",
+        "O2": "We maintain stock lists in Excel or registers",
+        "O3": "We use software to update and monitor stock periodically",
+        "O4": "We have a live inventory system that syncs with production and sales"
+      },
+      "insights": {
+        "I1": "Relying on memory and manual checks causes stockouts, overstocking, and inefficiency.",
+        "I2": "Excel-based tracking is fragile and requires constant checking.",
+        "I3": "Periodic updates help, but misalignment with demand/sales causes waste.",
+        "I4": "Integrated live systems reduce losses, optimize inventory, and increase agility."
+      },
+      "tag": "Inventory Management"
+    },
+    {
+      "id": "D2_Q4",
+      "dim_code": "D2",
+      "dimension": "Operations & Supply Chain",
+      "group": "Process Visibility & Control",
+      "question": "How quickly can you identify production delays or bottlenecks as they happen?",
+      "options": {
+        "O1": "We only know after delays occur or orders are missed",
+        "O2": "We depend on supervisor updates to catch delays",
+        "O3": "We can spot some issues through regular reviews",
+        "O4": "We can see delays in real time and act immediately"
+      },
+      "insights": {
+        "I1": "Delays go unnoticed until they disrupt delivery or customer satisfaction.",
+        "I2": "Supervisor updates rely on individual judgment and lag in reporting.",
+        "I3": "Delayed detection of issues still causes avoidable inefficiencies.",
+        "I4": "Immediate visibility of bottlenecks enables rapid resolution and smoother operations."
+      },
+      "tag": "Bottleneck Visibility"
+    },
+    {
+      "id": "D2_Q5",
+      "dim_code": "D2",
+      "dimension": "Operations & Supply Chain",
+      "group": "Supply Chain & Vendor Integration",
+      "question": "How connected are your suppliers in terms of sharing data like orders, deliveries, or invoices?",
+      "options": {
+        "O1": "Everything is handled manually via calls or WhatsApp",
+        "O2": "We exchange documents over email but not in real time",
+        "O3": "Some suppliers use basic systems to share updates",
+        "O4": "Most key suppliers are digitally connected to us in real time"
+      },
+      "insights": {
+        "I1": "Manual communication with vendors creates inefficiencies and increases error risk.",
+        "I2": "Non-integrated data exchange with vendors leads to inefficiencies.",
+        "I3": "Digital updates from suppliers help, but lack of structure limits scalability.",
+        "I4": "Real-time vendor integration improves speed, accuracy, and lowers costs."
+      },
+      "tag": "Supplier Integration"
+    },
+    {
+      "id": "D2_Q6",
+      "dim_code": "D2",
+      "dimension": "Operations & Supply Chain",
+      "group": "Supply Chain & Vendor Integration",
+      "question": "How is raw material procurement planned in relation to production needs or customer demand?",
+      "options": {
+        "O1": "We order materials based on past experience or urgency",
+        "O2": "We track consumption manually and order when levels fall",
+        "O3": "We forecast needs and plan purchases weekly or monthly",
+        "O4": "We use systems that link demand, inventory, and procurement in real time"
+      },
+      "insights": {
+        "I1": "Urgent or guess-based procurement leads to material shortages or overbuying.",
+        "I2": "Manual tracking of consumption creates lags and missed planning windows.",
+        "I3": "Forecasting helps planning but delays in updates reduce effectiveness.",
+        "I4": "Smart procurement systems ensure just-in-time supply and reduce waste."
+      },
+      "tag": "Procurement Planning"
+    },
+    {
+      "id": "D2_Q7",
+      "dim_code": "D2",
+      "dimension": "Operations & Supply Chain",
+      "group": "Supply Chain & Vendor Integration",
+      "question": "Can you track incoming raw materials and outgoing deliveries in real time?",
+      "options": {
+        "O1": "No, we rely on manual tracking and phone calls",
+        "O2": "We record movements after they happen",
+        "O3": "We update movement data daily or via software",
+        "O4": "We can track all material movements live through a system"
+      },
+      "insights": {
+        "I1": "Manual tracking causes poor coordination and delays in raw material or product movement.",
+        "I2": "Recording after-the-fact limits visibility and response effectiveness.",
+        "I3": "Daily updates improve visibility but delay response to fast changes.",
+        "I4": "Live tracking enhances logistics, customer service, and internal coordination."
+      },
+      "tag": "Material Movement Visibility"
+    },
+    {
+      "id": "D2_Q8",
+      "dim_code": "D2",
+      "dimension": "Operations & Supply Chain",
+      "group": "Supply Chain & Vendor Integration",
+      "question": "How structured is your vendor management process—from selection to performance tracking?",
+      "options": {
+        "O1": "We don't have a defined vendor selection or performance evaluation process.",
+        "O2": "Vendors are chosen based on price or urgency, with basic records maintained manually.",
+        "O3": "We use standard criteria for vendor selection and track performance in Excel or offline tools",
+        "O4": "We follow a structured, digital vendor lifecycle management process with integrated scorecards, alerts, and reviews"
+      },
+      "insights": {
+        "I1": "Lack of structured vendor management leads to inconsistent quality, hidden risks, and missed cost-saving opportunities.",
+        "I2": "Ad-hoc vendor decisions result in reactive firefighting and unreliable supply, impacting production schedules and margins.",
+        "I3": "Basic performance tracking helps, but without automation and analytics, insights remain limited and hard to scale.",
+        "I4": "ntegrated vendor management improves quality, reduces risks, ensures compliance, and enables strategic sourcing decisions."
+      },
+      "tag": "Vendor Management"
+    },
+    {
+      "id": "D2_Q9",
+      "dim_code": "D2",
+      "dimension": "Operations & Supply Chain",
+      "group": "Internal Automation & Efficiency",
+      "question": "How are repetitive tasks like shift handovers, quality checks, or logbooks managed?",
+      "options": {
+        "O1": "They are done manually using paper and verbal updates",
+        "O2": "Some are recorded in Excel or WhatsApp, but not consistently",
+        "O3": "Most tasks have a digital process or checklist in place",
+        "O4": "All routine tasks are automated or digitized across departments"
+      },
+      "insights": {
+        "I1": "Manual and verbal task execution risks errors, misalignment, and loss of accountability.",
+        "I2": "Inconsistent digital records reduce repeatability and transparency.",
+        "I3": "Digital checklists improve consistency, but gaps reduce effectiveness.",
+        "I4": "Automation improves speed, traceability, and operational resilience."
+      },
+      "tag": "Repetitive Task Management"
+    },
+    {
+      "id": "D2_Q10",
+      "dim_code": "D2",
+      "dimension": "Operations & Supply Chain",
+      "group": "Internal Automation & Efficiency",
+      "question": "Do different teams (production, planning, stores, etc.) work with shared data or tools?",
+      "options": {
+        "O1": "Each team works separately using their own records",
+        "O2": "Some teams share updates through email or meetings",
+        "O3": "We use shared Excel sheets or tools to collaborate",
+        "O4": "Teams access the same system and work on shared real-time data"
+      },
+      "insights": {
+        "I1": "Isolated records create silos, slowing decisions and reducing team synergy.",
+        "I2": "Partial sharing of updates leads to gaps and inefficiencies in collaboration.",
+        "I3": "Shared tools improve collaboration, but fragmentation still exists.",
+        "I4": "Unified platforms enable real-time collaboration and agile decision-making."
+      },
+      "tag": "Cross-Team Collaboration"
+    },
+    {
+      "id": "D2_Q11",
+      "dim_code": "D2",
+      "dimension": "Operations & Supply Chain",
+      "group": "Internal Automation & Efficiency",
+      "question": "Do you measure and improve process efficiency (cycle time, scrap rate, throughput)?",
+      "options": {
+        "O1": "We don’t track efficiency regularly",
+        "O2": "We have rough estimates but no regular analysis",
+        "O3": "We track some process metrics and try to improve them",
+        "O4": "We measure efficiency across all key processes and improve actively"
+      },
+      "insights": {
+        "I1": "Lack of efficiency data results in resource wastage and lost improvement opportunities.",
+        "I2": "Rough estimates cannot support systematic performance improvement.",
+        "I3": "Metrics allow limited process improvement, but broader insights are missed.",
+        "I4": "Real-time insights boost process throughput, quality, and cost efficiency."
+      },
+      "tag": "Process Efficiency Measurement"
+    },
+    {
+      "id": "D2_Q12",
+      "dim_code": "D2",
+      "dimension": "Operations & Supply Chain",
+      "group": "Quality, Safety & Compliance",
+      "question": "How do you manage and record product quality checks?",
+      "options": {
+        "O1": "Quality checks are done manually and filed in registers",
+        "O2": "We use Excel or Word to record results occasionally",
+        "O3": "Most checks are recorded digitally and reviewed later",
+        "O4": "We use digital tools to record, track, and analyze quality trends"
+      },
+      "insights": {
+        "I1": "Manual quality checks lead to inconsistent standards and poor traceability.",
+        "I2": "Infrequent digital records limit actionable insights.",
+        "I3": "Digital reviews help, but without automation, quality lags go unnoticed.",
+        "I4": "Continuous tracking improves product quality and audit readiness."
+      },
+      "tag": "Product Quality Control"
+    },
+    {
+      "id": "D2_Q13",
+      "dim_code": "D2",
+      "dimension": "Operations & Supply Chain",
+      "group": "Quality, Safety & Compliance",
+      "question": "Are your compliance activities (ISO, audits, safety checks) documented digitally?",
+      "options": {
+        "O1": "Everything is on paper or in filing cabinets",
+        "O2": "Some records are scanned or saved on computers",
+        "O3": "Most compliance records are stored and tracked digitally",
+        "O4": "All compliance processes are integrated into our system with alerts and logs"
+      },
+      "insights": {
+        "I1": "Paper-based compliance tracking increases audit risks and administrative burden.",
+        "I2": "Scanned or saved files lack automation or timely access for audits.",
+        "I3": "Tracking is useful but manual intervention still needed to stay compliant.",
+        "I4": "Digital compliance ensures readiness for audits and builds operational trust."
+      },
+      "tag": "Compliance Digitization"
+    },
+    {
+      "id": "D2_Q14",
+      "dim_code": "D2",
+      "dimension": "Operations & Supply Chain",
+      "group": "Quality, Safety & Compliance",
+      "question": "How well does your operations team adapt to urgent changes—like a rush order or line breakdown?",
+      "options": {
+        "O1": "It takes time and disruption to handle changes",
+        "O2": "We manage through verbal coordination or manager intervention",
+        "O3": "We respond using flexible planning and manual tracking",
+        "O4": "We have systems in place that help us respond quickly with minimal disruption"
+      },
+      "insights": {
+        "I1": "Reactive adaptation causes disruption and customer dissatisfaction.",
+        "I2": "Verbal coordination works for simple changes but doesn’t scale well.",
+        "I3": "Manual flexibility helps short term, but long-term agility suffers.",
+        "I4": "Responsive systems reduce downtime, increase productivity, and boost trust."
+      },
+      "tag": "Agility to Change"
+    },
+    {
+      "id": "D2_Q15",
+      "dim_code": "D2",
+      "dimension": "Operations & Supply Chain",
+      "group": "Quality, Safety & Compliance",
+      "question": "Are you able to generate reports or insights on your operations without manual compilation?",
+      "options": {
+        "O1": "Reports are created manually and take time",
+        "O2": "We use Excel templates but they require manual input",
+        "O3": "We have software that generates reports with some effort",
+        "O4": "Reports are auto-generated and available on demand"
+      },
+      "insights": {
+        "I1": "Manual report compilation delays decision-making and increases errors.",
+        "I2": "Templates ease effort but still require redundant manual data handling.",
+        "I3": "Software support helps, but partial automation limits strategic use.",
+        "I4": "On-demand reports enhance strategic decision-making and free up resources."
+      },
+      "tag": "Operational Reporting"
+    },
+    {
+      "id": "D3_Q1",
+      "dim_code": "D3",
+      "dimension": "Sales & Marketing",
+      "group": "Digital Channels & Reach",
+      "question": "Do you have an official website?",
+      "options": {
+        "O1": "No official website exists.",
+        "O2": "A simple webpage exists but lacks updates or useful information.",
+        "O3": "Updated catalog with inquiry",
+        "O4": "Integrated site with SEO/analytics"
+      },
+      "insights": {
+        "I1": "Zero digital presence; invisible to online buyers.",
+        "I2": "Basic presence but not discoverable; low credibility.",
+        "I3": "Functional website enables some engagement, but underleveraged.",
+        "I4": "Optimized site builds trust, improves search visibility, and captures leads."
+      },
+      "tag": "Website Presence"
+    },
+    {
+      "id": "D3_Q2",
+      "dim_code": "D3",
+      "dimension": "Sales & Marketing",
+      "group": "Digital Channels & Reach",
+      "question": "Are your products/services listed online?",
+      "options": {
+        "O1": "Products/services not listed anywhere online.",
+        "O2": "Listed on a niche platform",
+        "O3": "Listed on IndiaMART/Udaan",
+        "O4": "Listed on multiple B2B/B2C sites"
+      },
+      "insights": {
+        "I1": "Not listed online; no digital discovery or inbound traction.",
+        "I2": "Presence exists but not optimized or regularly updated.",
+        "I3": "Some reach and lead generation through local marketplaces.",
+        "I4": "Strategic listing improves reach, SEO, and multi-channel demand."
+      },
+      "tag": "Online Product Listings"
+    },
+    {
+      "id": "D3_Q3",
+      "dim_code": "D3",
+      "dimension": "Sales & Marketing",
+      "group": "Digital Channels & Reach",
+      "question": "Do you use social media for lead generation?",
+      "options": {
+        "O1": "Never used or implemented.",
+        "O2": "Occasional social media posts with no lead intent.",
+        "O3": "Regular posts but untracked",
+        "O4": "Targeted campaigns with analytics"
+      },
+      "insights": {
+        "I1": "No social presence means zero digital brand visibility.",
+        "I2": "Irregular effort leads to low engagement and poor ROI.",
+        "I3": "Consistent posts create awareness but lack conversion focus.",
+        "I4": "Data-driven campaigns turn social into a strong lead channel."
+      },
+      "tag": "Social Media Lead Gen"
+    },
+    {
+      "id": "D3_Q4",
+      "dim_code": "D3",
+      "dimension": "Sales & Marketing",
+      "group": "Digital Channels & Reach",
+      "question": "Do you run any digital ad campaigns?",
+      "options": {
+        "O1": "Never attempted or initiated.",
+        "O2": "Digital ads were briefly tried but then discontinued.",
+        "O3": "Occasional low-budget ads",
+        "O4": "Actively run optimized campaigns"
+      },
+      "insights": {
+        "I1": "No digital leads; total reliance on offline acquisition.",
+        "I2": "Lack of ROI or clarity caused early abandonment.",
+        "I3": "Some traction, but scale and targeting are missing.",
+        "I4": "Optimized ads provide scale, data, and predictable growth."
+      },
+      "tag": "Digital Ads"
+    },
+    {
+      "id": "D3_Q5",
+      "dim_code": "D3",
+      "dimension": "Sales & Marketing",
+      "group": "Customer Relationship & Sales Process",
+      "question": "How do you track leads and follow-ups?",
+      "options": {
+        "O1": "Lead tracking is managed through paper notes or Excel sheets.",
+        "O2": "A CRM or digital tool exists but is rarely used properly.",
+        "O3": "Only a few salespeople are actively using the CRM.",
+        "O4": "CRM used across team with automation"
+      },
+      "insights": {
+        "I1": "Leads lost in manual chaos; poor conversions.",
+        "I2": "CRM adoption is low, limiting visibility and action.",
+        "I3": "Partial adoption results in inconsistent performance.",
+        "I4": "Full CRM usage drives accountability and win rates."
+      },
+      "tag": "Lead Tracking"
+    },
+    {
+      "id": "D3_Q6",
+      "dim_code": "D3",
+      "dimension": "Sales & Marketing",
+      "group": "Customer Relationship & Sales Process",
+      "question": "Is there a structured sales funnel or pipeline?",
+      "options": {
+        "O1": "No defined structure or practice in place.",
+        "O2": "Sales funnel exists informally but not documented or tracked.",
+        "O3": "Sales funnel has defined stages tracked manually.",
+        "O4": "Clear stages with analytics and dashboards"
+      },
+      "insights": {
+        "I1": "No defined stages; inconsistent sales practices across reps.",
+        "I2": "Informal funnel lacks discipline or follow-through.",
+        "I3": "Pipeline exists but lacks data and visibility.",
+        "I4": "Structured funnel enables forecasting and conversion insights."
+      },
+      "tag": "Sales Funnel"
+    },
+    {
+      "id": "D3_Q7",
+      "dim_code": "D3",
+      "dimension": "Sales & Marketing",
+      "group": "Customer Relationship & Sales Process",
+      "question": "How is after-sales feedback handled?",
+      "options": {
+        "O1": "No structured method for handling this aspect.",
+        "O2": "Feedback is collected occasionally via calls or emails.",
+        "O3": "Feedback collected via forms or emails but not integrated.",
+        "O4": "Automated feedback & NPS integrated"
+      },
+      "insights": {
+        "I1": "No feedback captured; missed CX improvements.",
+        "I2": "Inconsistent collection limits learning from customers.",
+        "I3": "Data is collected but insights are rarely analyzed.",
+        "I4": "Automated CX insights enable retention and loyalty strategies."
+      },
+      "tag": "After-Sales Feedback"
+    },
+    {
+      "id": "D3_Q8",
+      "dim_code": "D3",
+      "dimension": "Sales & Marketing",
+      "group": "Customer Relationship & Sales Process",
+      "question": "Do sales reps use digital tools?",
+      "options": {
+        "O1": "No digital tools; rely entirely on manual, paper-based methods.",
+        "O2": "Sales reps use PowerPoint decks or printed catalogs.",
+        "O3": "Tablets/mobile CRM",
+        "O4": "Live inventory/quoting on devices"
+      },
+      "insights": {
+        "I1": "Sales rely on outdated methods with limited information.",
+        "I2": "Basic tools enable passive sharing, not active selling.",
+        "I3": "Mobile tools improve accuracy and confidence in sales.",
+        "I4": "Smart tools close deals faster with data-driven engagement."
+      },
+      "tag": "Sales Enablement"
+    },
+    {
+      "id": "D3_Q9",
+      "dim_code": "D3",
+      "dimension": "Sales & Marketing",
+      "group": "Customer Intelligence & Data Use",
+      "question": "How do you gather market or customer insights?",
+      "options": {
+        "O1": "Business decisions are made solely based on intuition.",
+        "O2": "Surveys or feedback calls are conducted occasionally.",
+        "O3": "Google Analytics or social listening",
+        "O4": "Multi-source insights + dashboards"
+      },
+      "insights": {
+        "I1": "No data, just instincts — high risk for wrong decisions.",
+        "I2": "Sporadic insights delay trend identification.",
+        "I3": "Some analytics used, but disconnected from strategy.",
+        "I4": "Insights drive proactive, adaptive decision-making."
+      },
+      "tag": "Market Intelligence"
+    },
+    {
+      "id": "D3_Q10",
+      "dim_code": "D3",
+      "dimension": "Sales & Marketing",
+      "group": "Customer Intelligence & Data Use",
+      "question": "Is website/social analytics used to improve strategy?",
+      "options": {
+        "O1": "Never used or implemented.",
+        "O2": "Analytics checked once, with no follow-up action.",
+        "O3": "Analytics reviewed monthly but not acted upon.",
+        "O4": "Actively use data for experiments"
+      },
+      "insights": {
+        "I1": "Blind to what's working or failing online.",
+        "I2": "Data ignored; no optimization path.",
+        "I3": "Some awareness, but underused for growth.",
+        "I4": "Experimentation and iteration drive performance gains."
+      },
+      "tag": "Analytics Use"
+    },
+    {
+      "id": "D3_Q11",
+      "dim_code": "D3",
+      "dimension": "Sales & Marketing",
+      "group": "Customer Intelligence & Data Use",
+      "question": "Do you segment your customers?",
+      "options": {
+        "O1": "One-size-fits-all",
+        "O2": "Customers segmented by location or specific product line.",
+        "O3": "Customers segmented by their sector, size, or business needs.",
+        "O4": "Full persona-based, hyper-personalized"
+      },
+      "insights": {
+        "I1": "No segmentation leads to irrelevant offers and waste.",
+        "I2": "Some grouping exists, but not strategically used.",
+        "I3": "Tactical segmentation helps with targeted outreach.",
+        "I4": "Advanced segmentation powers conversion and loyalty."
+      },
+      "tag": "Customer Segmentation"
+    },
+    {
+      "id": "D3_Q12",
+      "dim_code": "D3",
+      "dimension": "Sales & Marketing",
+      "group": "Customer Intelligence & Data Use",
+      "question": "Do you personalize marketing campaigns?",
+      "options": {
+        "O1": "No defined structure or practice in place.",
+        "O2": "Basic personalization such as using names in emails.",
+        "O3": "Segment-based messaging",
+        "O4": "Dynamic personalization via CRM/automation"
+      },
+      "insights": {
+        "I1": "Generic messaging erodes customer trust and engagement.",
+        "I2": "Superficial personalization; no competitive edge.",
+        "I3": "Segmented content improves relevance modestly.",
+        "I4": "Behavioral personalization boosts engagement and ROI."
+      },
+      "tag": "Marketing Personalization"
+    },
+    {
+      "id": "D3_Q13",
+      "dim_code": "D3",
+      "dimension": "Sales & Marketing",
+      "group": "Brand, Experience & Innovation",
+      "question": "How is your digital brand perceived?",
+      "options": {
+        "O1": "Brand is largely unknown in digital channels.",
+        "O2": "Minimal online brand presence without strategic positioning.",
+        "O3": "Known within a specific niche or sector online.",
+        "O4": "Strong brand + trust signals"
+      },
+      "insights": {
+        "I1": "Lack of brand presence erodes credibility.",
+        "I2": "Unremarkable presence blends into competition.",
+        "I3": "Credibility exists but limited to small circles.",
+        "I4": "Strong digital brand builds authority and buyer confidence."
+      },
+      "tag": "Digital Brand Perception"
+    },
+    {
+      "id": "D3_Q14",
+      "dim_code": "D3",
+      "dimension": "Sales & Marketing",
+      "group": "Brand, Experience & Innovation",
+      "question": "Do you sell your products directly to customers, or only through dealers and distributors?",
+      "options": {
+        "O1": "No defined structure or practice in place.",
+        "O2": "Exploring the model but not yet implemented.",
+        "O3": "Initial pilots for D2C or hybrid sales models underway.",
+        "O4": "Fully functional with fulfillment"
+      },
+      "insights": {
+        "I1": "No D2C limits revenue and customer control.",
+        "I2": "Intent exists but execution is lacking.",
+        "I3": "Pilot models show promise but need scale.",
+        "I4": "D2C builds margin, loyalty, and market presence."
+      },
+      "tag": "Sales Model Innovation"
+    },
+    {
+      "id": "D3_Q15",
+      "dim_code": "D3",
+      "dimension": "Sales & Marketing",
+      "group": "Brand, Experience & Innovation",
+      "question": "Do you use digital tools like WhatsApp, chat, or online portals to support and communicate with customers?",
+      "options": {
+        "O1": "No defined structure or practice in place.",
+        "O2": "Customer support handled manually via phone or email.",
+        "O3": "Some CX technology like chat or portals are in use but limited.",
+        "O4": "Full CX tools (chatbot, order tracking, ticketing)"
+      },
+      "insights": {
+        "I1": "Customer service stuck in the past.",
+        "I2": "Basic digital support, but not integrated or tracked.",
+        "I3": "Initial tech use improves responsiveness slightly.",
+        "I4": "Full CX suite delivers seamless experience and satisfaction."
+      },
+      "tag": "CX Tech Innovation"
+    },
+    {
+      "id": "D4_Q1",
+      "dim_code": "D4",
+      "dimension": "Technology & Infrastructure",
+      "group": "Core Business Systems",
+      "question": "How are your day-to-day operations (sales, inventory, production, accounts) managed digitally?",
+      "options": {
+        "O1": "All records are maintained manually or in Excel",
+        "O2": "Different software used for different functions (e.g., Tally + Excel + emails)",
+        "O3": "Partial ERP or CRM in place, but not across departments",
+        "O4": "Fully integrated ERP/CRM solution implemented"
+      },
+      "insights": {
+        "I1": "Operations are fragmented and manual, limiting visibility and efficiency.",
+        "I2": "Multiple tools create silos and manual reconciliation effort.",
+        "I3": "Digital tools exist, but lack integration slows execution.",
+        "I4": "Integrated systems enhance visibility, control, and scalability."
+      },
+      "tag": "Digital Operations Backbone"
+    },
+    {
+      "id": "D4_Q2",
+      "dim_code": "D4",
+      "dimension": "Technology & Infrastructure",
+      "group": "Core Business Systems",
+      "question": "How do your teams manage customer interactions and follow-ups?",
+      "options": {
+        "O1": "No structured system, tracked via calls or paper",
+        "O2": "Customer details maintained in Excel or emails",
+        "O3": "CRM system in use, but limited adoption",
+        "O4": "CRM fully adopted across sales and service functions"
+      },
+      "insights": {
+        "I1": "Customer data is lost or inconsistently tracked.",
+        "I2": "Basic records exist but hard to access and use for follow-up.",
+        "I3": "CRM adoption is low, impacting customer experience and retention.",
+        "I4": "CRM enables proactive engagement and data-backed decisions."
+      },
+      "tag": "Customer Relationship System"
+    },
+    {
+      "id": "D4_Q3",
+      "dim_code": "D4",
+      "dimension": "Technology & Infrastructure",
+      "group": "Core Business Systems",
+      "question": "How do you manage after-sales service, field operations, or customer support?",
+      "options": {
+        "O1": "Handled manually or ad-hoc over phone calls",
+        "O2": "Service data maintained offline or in spreadsheets",
+        "O3": "Using digital tools but not integrated with CRM/ERP",
+        "O4": "Digital service management tool integrated with main systems"
+      },
+      "insights": {
+        "I1": "After-sales support is reactive and undocumented.",
+        "I2": "Records exist but limit real-time service visibility.",
+        "I3": "Tools exist, but data is siloed from operations.",
+        "I4": "Integrated tools drive accountability and faster resolution."
+      },
+      "tag": "Service Management Integration"
+    },
+    {
+      "id": "D4_Q4",
+      "dim_code": "D4",
+      "dimension": "Technology & Infrastructure",
+      "group": "IT Infrastructure & Data Security",
+      "question": "What kind of IT infrastructure supports your business (network, systems, etc.)?",
+      "options": {
+        "O1": "Basic computers and internet with frequent downtime",
+        "O2": "Decent PCs and internet, but no structured IT plan",
+        "O3": "Systems upgraded periodically with basic monitoring",
+        "O4": "Robust IT setup with redundancy, monitoring, and upgrades"
+      },
+      "insights": {
+        "I1": "Weak infrastructure causes frequent disruptions.",
+        "I2": "Basic tech works but limits growth and security.",
+        "I3": "Some planning exists, but gaps remain in reliability.",
+        "I4": "Stable infrastructure improves productivity and risk control."
+      },
+      "tag": "IT Infrastructure Readiness"
+    },
+    {
+      "id": "D4_Q5",
+      "dim_code": "D4",
+      "dimension": "Technology & Infrastructure",
+      "group": "IT Infrastructure & Data Security",
+      "question": "How is data backed up and protected in your company?",
+      "options": {
+        "O1": "No backup process in place",
+        "O2": "Ad-hoc/manual backups by individual teams",
+        "O3": "Periodic backups automated, but not tested",
+        "O4": "Fully automated, encrypted, and regularly tested backups"
+      },
+      "insights": {
+        "I1": "Data loss risk is extremely high.",
+        "I2": "Inconsistent backups create uncertainty and liability.",
+        "I3": "Some backup discipline, but recovery untested.",
+        "I4": "Enterprise-grade data protection ensures resilience."
+      },
+      "tag": "Data Backup & Recovery"
+    },
+    {
+      "id": "D4_Q6",
+      "dim_code": "D4",
+      "dimension": "Technology & Infrastructure",
+      "group": "IT Infrastructure & Data Security",
+      "question": "What level of cybersecurity protection do you currently use?",
+      "options": {
+        "O1": "No cybersecurity practices in place",
+        "O2": "Basic antivirus and firewall setup",
+        "O3": "Network security in place with user awareness training",
+        "O4": "Formal cybersecurity framework with audits and compliance"
+      },
+      "insights": {
+        "I1": "Critical exposure to cyber threats; no protection in place.",
+        "I2": "Basic protection is not enough for modern threats.",
+        "I3": "Awareness and basic controls reduce risk, but gaps remain.",
+        "I4": "Comprehensive protection ensures compliance and business continuity."
+      },
+      "tag": "Cybersecurity Maturity"
+    },
+    {
+      "id": "D4_Q7",
+      "dim_code": "D4",
+      "dimension": "Technology & Infrastructure",
+      "group": "IT Infrastructure & Data Security",
+      "question": "What is your current approach to hosting your software and systems?",
+      "options": {
+        "O1": "All software runs on office desktops or internal servers",
+        "O2": "Some tools hosted on cloud; others on-premise",
+        "O3": "Majority systems migrated to cloud-based platforms",
+        "O4": "Fully cloud-native architecture across systems"
+      },
+      "insights": {
+        "I1": "On-prem hosting limits accessibility and increases maintenance load.",
+        "I2": "Hybrid setup creates complexity and inefficiency.",
+        "I3": "Cloud adoption improves access but needs full migration.",
+        "I4": "Cloud-native boosts flexibility, scale, and resilience."
+      },
+      "tag": "Hosting Strategy"
+    },
+    {
+      "id": "D4_Q8",
+      "dim_code": "D4",
+      "dimension": "Technology & Infrastructure",
+      "group": "Data & Analytics",
+      "question": "How do you analyze operational or sales data in your company?",
+      "options": {
+        "O1": "We don’t do any structured analysis",
+        "O2": "We use Excel for monthly reporting",
+        "O3": "We use dashboards from ERP/CRM for routine analysis",
+        "O4": "Predictive dashboards and KPIs guide decisions"
+      },
+      "insights": {
+        "I1": "Decisions are based on intuition, not data.",
+        "I2": "Basic reporting lacks strategic insight or speed.",
+        "I3": "Dashboards help tracking, but lack forward-looking insight.",
+        "I4": "Predictive analytics drive informed, proactive decisions."
+      },
+      "tag": "Data Analysis Practice"
+    },
+    {
+      "id": "D4_Q9",
+      "dim_code": "D4",
+      "dimension": "Technology & Infrastructure",
+      "group": "Data & Analytics",
+      "question": "How often do business decisions rely on data in your company?",
+      "options": {
+        "O1": "Mostly gut feel or past experience",
+        "O2": "Data referred occasionally, mostly for finance",
+        "O3": "Data consulted before major decisions",
+        "O4": "Every team uses relevant data to drive decisions"
+      },
+      "insights": {
+        "I1": "Low data usage results in poor agility and slow decisions.",
+        "I2": "Finance-driven data use misses broader business insights.",
+        "I3": "Data-informed decisions improve consistency.",
+        "I4": "Data-driven culture boosts speed, alignment, and outcomes."
+      },
+      "tag": "Data-Driven Decisions"
+    },
+    {
+      "id": "D4_Q10",
+      "dim_code": "D4",
+      "dimension": "Technology & Infrastructure",
+      "group": "Data & Analytics",
+      "question": "What kind of tools do you use for business analysis?",
+      "options": {
+        "O1": "None, we rely on manual methods",
+        "O2": "Excel/Spreadsheets with some macros or templates",
+        "O3": "Basic BI tools like Power BI/Tableau in place",
+        "O4": "Fully integrated BI tools with real-time data feeds"
+      },
+      "insights": {
+        "I1": "No tools limit visibility and reactive decision-making.",
+        "I2": "Spreadsheets work, but don't scale well.",
+        "I3": "BI tools improve insight, but integration is partial.",
+        "I4": "Integrated BI empowers real-time strategic execution."
+      },
+      "tag": "Business Intelligence Tools"
+    },
+    {
+      "id": "D4_Q11",
+      "dim_code": "D4",
+      "dimension": "Technology & Infrastructure",
+      "group": "Emerging Tech & Capability Building",
+      "question": "What’s your exposure to technologies like IoT, AI, AR/VR, or Digital Twin?",
+      "options": {
+        "O1": "Not aware or using any of these",
+        "O2": "Aware and considering for future",
+        "O3": "Pilot projects in progress or early adoption",
+        "O4": "At least one emerging tech fully integrated in business"
+      },
+      "insights": {
+        "I1": "Zero exposure risks falling behind industry trends.",
+        "I2": "Awareness exists, but no active progress.",
+        "I3": "Early steps taken; benefits not fully realized yet.",
+        "I4": "Integration provides strategic advantage and differentiation."
+      },
+      "tag": "Emerging Tech Adoption"
+    },
+    {
+      "id": "D4_Q12",
+      "dim_code": "D4",
+      "dimension": "Technology & Infrastructure",
+      "group": "Emerging Tech & Capability Building",
+      "question": "How do you evaluate and adopt new technologies?",
+      "options": {
+        "O1": "We don’t formally evaluate new tools",
+        "O2": "We try tools recommended by vendors or peers",
+        "O3": "Technology decisions taken after internal review",
+        "O4": "Tech adoption based on strategic planning and ROI"
+      },
+      "insights": {
+        "I1": "Adoption is reactive and lacks alignment with goals.",
+        "I2": "Choices influenced by convenience, not needs.",
+        "I3": "Structured review helps balance risks and returns.",
+        "I4": "Strategic adoption ensures long-term value creation."
+      },
+      "tag": "Tech Evaluation Process"
+    },
+    {
+      "id": "D4_Q13",
+      "dim_code": "D4",
+      "dimension": "Technology & Infrastructure",
+      "group": "Emerging Tech & Capability Building",
+      "question": "Do you have a dedicated tech person/team or external partner to guide your IT efforts?",
+      "options": {
+        "O1": "No, we manage IT ourselves",
+        "O2": "One internal person looks after basic IT",
+        "O3": "External IT consultant or vendor manages systems",
+        "O4": "Internal IT lead or fractional CIO with roadmap view"
+      },
+      "insights": {
+        "I1": "No dedicated support limits security and innovation.",
+        "I2": "Basic IT support handles tasks, not strategy.",
+        "I3": "External help provides structure but lacks internal context.",
+        "I4": "Strategic IT leadership drives alignment and foresight."
+      },
+      "tag": "IT Ownership Model"
+    },
+    {
+      "id": "D4_Q14",
+      "dim_code": "D4",
+      "dimension": "Technology & Infrastructure",
+      "group": "Emerging Tech & Capability Building",
+      "question": "How often is your company’s tech roadmap reviewed or updated?",
+      "options": {
+        "O1": "We don’t have a tech roadmap",
+        "O2": "Occasionally, when something breaks or becomes outdated",
+        "O3": "Reviewed annually or when new projects start",
+        "O4": "Regularly reviewed with clear short- and long-term tech priorities"
+      },
+      "insights": {
+        "I1": "No roadmap results in scattered efforts and tech debt.",
+        "I2": "Tech planning is reactive, not proactive.",
+        "I3": "Some alignment exists but lacks agility.",
+        "I4": "Proactive roadmap review boosts continuity and value capture."
+      },
+      "tag": "Tech Planning Discipline"
+    },
+    {
+      "id": "D4_Q15",
+      "dim_code": "D4",
+      "dimension": "Technology & Infrastructure",
+      "group": "Emerging Tech & Capability Building",
+      "question": "How comfortable are your employees in using digital tools?",
+      "options": {
+        "O1": "Most employees avoid digital tools or struggle",
+        "O2": "Mixed comfort, some training provided",
+        "O3": "Majority are comfortable, with regular training",
+        "O4": "Teams are confident, digitally skilled, and suggest improvements"
+      },
+      "insights": {
+        "I1": "Low digital comfort slows adoption and drains productivity.",
+        "I2": "Training exists, but gaps remain in confidence.",
+        "I3": "Majority participation helps sustain tools.",
+        "I4": "Digital fluency across teams accelerates transformation."
+      },
+      "tag": "Digital Skill Readiness"
+    },
+    {
+      "id": "D5_Q1",
+      "dim_code": "D5",
+      "dimension": "Skills & Capabilities",
+      "group": "Current Skills & Digital Readiness",
+      "question": "How comfortable are your employees with digital tools like ERP, CRM, or production software?",
+      "options": {
+        "O1": "Most employees struggle or avoid using digital tools.",
+        "O2": "Some teams are comfortable, mostly in admin or tech functions.",
+        "O3": "Most functions are using digital tools, though some still need help.",
+        "O4": "Employees across all functions are confident and proactive with digital tools."
+      },
+      "insights": {
+        "I1": "Most employees avoid using digital tools, causing delays and manual errors.",
+        "I2": "Digital tools used only by admin or finance, rest rely on paper-based processes.",
+        "I3": "Employees across functions use digital tools with some assistance.",
+        "I4": "Teams are fluent with ERP/CRM and use features to drive productivity."
+      },
+      "tag": "Employee Digital Comfort"
+    },
+    {
+      "id": "D5_Q2",
+      "dim_code": "D5",
+      "dimension": "Skills & Capabilities",
+      "group": "Current Skills & Digital Readiness",
+      "question": "Do your employees have data analysis or decision-support skills?",
+      "options": {
+        "O1": "Data is mostly handled by senior management or external vendors.",
+        "O2": "A few team members can handle Excel or basic reporting.",
+        "O3": "We have in-house capabilities for analysis, but not yet advanced.",
+        "O4": "Data analysis is embedded in decision-making across teams."
+      },
+      "insights": {
+        "I1": "Data decisions are centralized with no team member equipped for analysis.",
+        "I2": "Only a few staff know how to use Excel or generate basic reports.",
+        "I3": "Key departments use dashboards or KPIs, but analysis still reactive.",
+        "I4": "Teams are trained to use data proactively for decision-making and forecasting."
+      },
+      "tag": "Data Skills Readiness"
+    },
+    {
+      "id": "D5_Q3",
+      "dim_code": "D5",
+      "dimension": "Skills & Capabilities",
+      "group": "Current Skills & Digital Readiness",
+      "question": "Do you have cybersecurity awareness programs for your staff?",
+      "options": {
+        "O1": "No awareness or training exists on digital safety.",
+        "O2": "Basic guidelines exist but not followed consistently.",
+        "O3": "Regular sessions or reminders are shared on cyber hygiene.",
+        "O4": "Everyone follows cybersecurity best practices; it’s part of culture."
+      },
+      "insights": {
+        "I1": "Employees unaware of basic cybersecurity risks—high vulnerability.",
+        "I2": "Some know about risks, but practices like weak passwords are common.",
+        "I3": "We run ad-hoc awareness drives but still see risky behaviors.",
+        "I4": "Cyber safety is embedded in daily behavior; phishing awareness is high."
+      },
+      "tag": "Cybersecurity Culture"
+    },
+    {
+      "id": "D5_Q4",
+      "dim_code": "D5",
+      "dimension": "Skills & Capabilities",
+      "group": "Current Skills & Digital Readiness",
+      "question": "How do you manage digital roles like IT, marketing tech, analytics?",
+      "options": {
+        "O1": "We have no dedicated roles; everything is ad hoc.",
+        "O2": "We use freelancers or vendors for specific digital tasks.",
+        "O3": "We have internal team members trained for some of these roles.",
+        "O4": "We have a structured digital team or hybrid internal-external support."
+      },
+      "insights": {
+        "I1": "No clear ownership for IT or digital responsibilities; high dependency on outsiders.",
+        "I2": "Freelancers/vendors are used, but lack integration into business goals.",
+        "I3": "Some team members are digitally inclined but multitask without formal roles.",
+        "I4": "Dedicated digital team or hybrid structure drives all tech-enabled initiatives."
+      },
+      "tag": "Digital Role Ownership"
+    },
+    {
+      "id": "D5_Q5",
+      "dim_code": "D5",
+      "dimension": "Skills & Capabilities",
+      "group": "Training & Upskilling",
+      "question": "How often do employees receive formal training on new tools or systems?",
+      "options": {
+        "O1": "Rarely, unless absolutely necessary.",
+        "O2": "Occasionally, depending on need or vendor support.",
+        "O3": "We plan regular sessions for key teams.",
+        "O4": "We follow a structured learning calendar for continuous upskilling."
+      },
+      "insights": {
+        "I1": "Formal training is rare; new tools are introduced without enablement.",
+        "I2": "Vendors occasionally provide training but no internal ownership exists.",
+        "I3": "Training is scheduled for new systems, but informal learning dominates.",
+        "I4": "Training programs are tracked, recurring, and tailored to team needs."
+      },
+      "tag": "Formal Training"
+    },
+    {
+      "id": "D5_Q6",
+      "dim_code": "D5",
+      "dimension": "Skills & Capabilities",
+      "group": "Training & Upskilling",
+      "question": "Do you allocate time during work hours for training or experimentation?",
+      "options": {
+        "O1": "No, we focus on daily tasks and firefighting.",
+        "O2": "Occasionally, but it's seen as a disruption.",
+        "O3": "We try to balance work and learning when possible.",
+        "O4": "We set aside regular hours for learning and experimentation."
+      },
+      "insights": {
+        "I1": "Workload pressure means no time is allocated to learning.",
+        "I2": "Learning is seen as secondary to operations, done only when free.",
+        "I3": "Time is occasionally reserved, but inconsistent across departments.",
+        "I4": "Dedicated time blocks and calendar slots exist for digital learning."
+      },
+      "tag": "Time for Learning"
+    },
+    {
+      "id": "D5_Q7",
+      "dim_code": "D5",
+      "dimension": "Skills & Capabilities",
+      "group": "Training & Upskilling",
+      "question": "How do you promote cross-functional exposure or digital champions?",
+      "options": {
+        "O1": "Teams work in silos, limited exposure across functions.",
+        "O2": "Occasional knowledge sharing happens informally.",
+        "O3": "We encourage job shadowing or project-based collaboration.",
+        "O4": "We have appointed digital champions or mentors across functions."
+      },
+      "insights": {
+        "I1": "Teams are siloed; no visibility into each other’s digital efforts.",
+        "I2": "Some departments share learnings informally but lack process.",
+        "I3": "We assign digital point persons, but no structure to cross-train.",
+        "I4": "We have active digital champions mentoring others across functions."
+      },
+      "tag": "Cross-Functional Exposure"
+    },
+    {
+      "id": "D5_Q8",
+      "dim_code": "D5",
+      "dimension": "Skills & Capabilities",
+      "group": "Training & Upskilling",
+      "question": "How do you recognize or reward skill development among employees?",
+      "options": {
+        "O1": "It’s not currently part of our performance reviews.",
+        "O2": "We verbally appreciate, but no formal system.",
+        "O3": "We include learning goals in appraisals.",
+        "O4": "We reward certifications, upskilling, and knowledge sharing."
+      },
+      "insights": {
+        "I1": "No rewards or recognition for learning; no motivation to upskill.",
+        "I2": "Informal praise exists, but not linked to performance evaluation.",
+        "I3": "Learning is included in KPIs but lacks tangible recognition.",
+        "I4": "Skill growth is rewarded via certifications, promotions, or bonuses."
+      },
+      "tag": "Recognition of Learning"
+    },
+    {
+      "id": "D5_Q9",
+      "dim_code": "D5",
+      "dimension": "Skills & Capabilities",
+      "group": "Leadership & Decision-Making",
+      "question": "How confident is the leadership team in navigating digital transformation?",
+      "options": {
+        "O1": "Leadership lacks exposure or interest in digital topics.",
+        "O2": "We are learning but rely heavily on external advisors.",
+        "O3": "Leaders are informed and take active interest in initiatives.",
+        "O4": "Leadership drives transformation directly with clarity and conviction."
+      },
+      "insights": {
+        "I1": "Leadership is skeptical or passive toward digital transformation.",
+        "I2": "Leaders are curious but rely on external support or vendors.",
+        "I3": "Leaders are invested in the process and review initiatives periodically.",
+        "I4": "Leadership drives transformation directly and leads from the front."
+      },
+      "tag": "Leadership Digital Confidence"
+    },
+    {
+      "id": "D5_Q10",
+      "dim_code": "D5",
+      "dimension": "Skills & Capabilities",
+      "group": "Leadership & Decision-Making",
+      "question": "Who drives decisions around adopting new tools or processes?",
+      "options": {
+        "O1": "Only the CEO or owner makes such decisions.",
+        "O2": "Decisions are taken after vendor consultations.",
+        "O3": "Senior leadership team jointly evaluates and decides.",
+        "O4": "Cross-functional teams are empowered to propose and drive decisions."
+      },
+      "insights": {
+        "I1": "All decisions made by one person; no systemized evaluation process.",
+        "I2": "Decisions driven by vendor advice or personal intuition.",
+        "I3": "Leadership team collectively makes informed tech decisions.",
+        "I4": "Cross-functional teams evaluate needs and recommend solutions."
+      },
+      "tag": "Decision-Making Governance"
+    },
+    {
+      "id": "D5_Q11",
+      "dim_code": "D5",
+      "dimension": "Skills & Capabilities",
+      "group": "Leadership & Decision-Making",
+      "question": "How do you approach hiring or onboarding for digital roles?",
+      "options": {
+        "O1": "We avoid hiring due to lack of clarity or budget.",
+        "O2": "We hire when forced, usually based on references.",
+        "O3": "We look for digital readiness in key roles when hiring.",
+        "O4": "We proactively plan digital talent needs and source accordingly."
+      },
+      "insights": {
+        "I1": "Avoid hiring for digital roles due to unclear needs or cost fears.",
+        "I2": "Reactive hiring with generic profiles, limited digital mindset.",
+        "I3": "Hiring includes digital mindset evaluation, but limited outreach.",
+        "I4": "Proactive planning for tech roles through colleges, freelancers, or networks."
+      },
+      "tag": "Digital Talent Strategy"
+    },
+    {
+      "id": "D5_Q12",
+      "dim_code": "D5",
+      "dimension": "Skills & Capabilities",
+      "group": "Culture & Change Readiness",
+      "question": "How do employees react to new technology or process changes?",
+      "options": {
+        "O1": "Mostly resistant, fearing workload or job loss.",
+        "O2": "Some openness, but lots of hesitation.",
+        "O3": "Employees are receptive if changes are explained clearly.",
+        "O4": "Teams are proactive and often suggest improvements themselves."
+      },
+      "insights": {
+        "I1": "Employees fear tech; believe automation will replace them.",
+        "I2": "Resistance is common; teams are hesitant to adopt changes.",
+        "I3": "Employees accept changes when rationale is communicated well.",
+        "I4": "Employees are active participants in suggesting improvements."
+      },
+      "tag": "Change Adoption Culture"
+    },
+    {
+      "id": "D5_Q13",
+      "dim_code": "D5",
+      "dimension": "Skills & Capabilities",
+      "group": "Culture & Change Readiness",
+      "question": "How do you manage employee concerns during digital transformation?",
+      "options": {
+        "O1": "We don’t communicate much unless there’s resistance.",
+        "O2": "We give updates but rarely engage in dialogue.",
+        "O3": "We explain changes and gather feedback from time to time.",
+        "O4": "We involve employees early and treat change as a shared journey."
+      },
+      "insights": {
+        "I1": "No formal way to address employee concerns; change met with fear.",
+        "I2": "Minimal feedback mechanisms; top-down communication prevails.",
+        "I3": "Feedback is gathered through town halls or manager check-ins.",
+        "I4": "Employees are involved from planning to rollout; co-creation encouraged."
+      },
+      "tag": "Employee Engagement in Change"
+    },
+    {
+      "id": "D5_Q14",
+      "dim_code": "D5",
+      "dimension": "Skills & Capabilities",
+      "group": "Culture & Change Readiness",
+      "question": "Is there a culture of continuous learning in your company?",
+      "options": {
+        "O1": "Not really; people focus only on core jobs.",
+        "O2": "Some self-driven learners exist, not company-wide.",
+        "O3": "Management encourages learning but uptake is mixed.",
+        "O4": "Learning is ingrained – people share knowledge and explore new tools."
+      },
+      "insights": {
+        "I1": "Learning not prioritized; employees focus only on routine tasks.",
+        "I2": "Curious individuals learn on their own but lack support.",
+        "I3": "Company encourages learning, but no structured tracking exists.",
+        "I4": "Learning culture is strong—peer learning and idea sharing are routine."
+      },
+      "tag": "Learning Culture"
+    },
+    {
+      "id": "D5_Q15",
+      "dim_code": "D5",
+      "dimension": "Skills & Capabilities",
+      "group": "Culture & Change Readiness",
+      "question": "How comfortable are older and younger employees in working together on digital tasks?",
+      "options": {
+        "O1": "There’s a visible gap and lack of collaboration.",
+        "O2": "They work separately but respect each other’s domains.",
+        "O3": "We encourage collaboration through informal pairing.",
+        "O4": "We have structured mentorships or task forces for intergenerational learning."
+      },
+      "insights": {
+        "I1": "Visible friction between older and younger employees on tech usage.",
+        "I2": "They tolerate each other’s styles, but don't collaborate much.",
+        "I3": "Some informal pairing helps reduce the tech generation gap.",
+        "I4": "We have structured mentoring for mutual learning across generations."
+      },
+      "tag": "Intergenerational Collaboration"
+    }
+  ]
+}

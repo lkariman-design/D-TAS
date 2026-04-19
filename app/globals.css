@@ -1,26 +1,44 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --dtas-navy:    #0B3A66;
+  --dtas-blue:    #1F4ED8;
+  --dtas-legacy:  #d9534f;
+  --dtas-siloed:  #f0ad4e;
+  --dtas-strategic: #5cb85c;
+  --dtas-future:  #1a7a4a;
+  --background:   #f8fafc;
+  --foreground:   #1e293b;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', 'Inter', system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .heading {
+  font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+}
+
+.band-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 2px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+.band-legacy   { background: var(--dtas-legacy); }
+.band-siloed   { background: var(--dtas-siloed); color: #333; }
+.band-strategic { background: var(--dtas-strategic); }
+.band-future-ready { background: var(--dtas-future); }
+
+@media print {
+  .no-print { display: none !important; }
+  .print-break { page-break-before: always; }
+  body { background: #fff; }
 }
