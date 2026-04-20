@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import SavedReports from "@/app/SavedReports";
 
 const TIMELINES = [
   { value: "6 months",  label: "6 Months",  desc: "Quick wins — visible results fast",         icon: "⚡" },
@@ -229,6 +230,8 @@ export default function OnboardingClient() {
           </div>
         )}
       </div>
+
+      <SavedReports />
     </div>
   );
 }
