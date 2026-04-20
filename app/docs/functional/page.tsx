@@ -65,6 +65,7 @@ const TOC = [
   { id: "swot",        label: "9. SWOT Analysis" },
   { id: "nba",         label: "10. Next Best Actions" },
   { id: "demo",        label: "11. Demo Reports" },
+  { id: "persistence", label: "12. Report Persistence & Sharing" },
 ];
 
 export default function FunctionalDoc() {
@@ -241,6 +242,19 @@ export default function FunctionalDoc() {
                 ["D5","Skills & Capabilities","15","🧠"],
               ]}
             />
+            <Sub title="Progress Recovery">
+              <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                Assessment progress is automatically saved to <code className="bg-gray-100 px-1 rounded">sessionStorage</code> after
+                every confirmed answer. If a user accidentally presses the browser back button, closes the tab, or
+                refreshes mid-assessment, they are returned to exactly the question they left off at — with all
+                previous answers intact. XP is recomputed from the number of saved answers on restore.
+              </p>
+              <InfoBox color="green">
+                Progress is cleared automatically in two cases: (1) when the user completes the assessment and
+                navigates to results, and (2) when a new assessment is started from the onboarding form — ensuring
+                no stale data carries over to a fresh session.
+              </InfoBox>
+            </Sub>
             <Sub title="Gamification Layer">
               <p className="text-gray-600 text-sm leading-relaxed mb-3">
                 The questionnaire is designed to maintain engagement across all 75 questions through a gamification system:
@@ -455,8 +469,36 @@ export default function FunctionalDoc() {
                   ["Business Benefit","Revenue, cost, or efficiency outcome in measurable terms"],
                   ["Do-Nothing Risk","What happens if this action is not taken in the timeline"],
                   ["Effort / Timeline / Capex","Implementation complexity, duration, and investment band"],
+                  ["Engagement Type","Category of project engagement required"],
+                  ["Engagement Duration","Estimated delivery timeframe"],
+                  ["Expert Roles + Skills","Specific consultant/specialist roles needed with required skill tags"],
                 ]}
               />
+            </Sub>
+            <Sub title="Project Engagement Profiles">
+              <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                Every NBA card includes a <strong>Project Engagement</strong> section visible in the expanded view.
+                This tells the business exactly what kind of external engagement to procure to execute the action.
+              </p>
+              <Table
+                headers={["Engagement Type","Example Actions","What it means"]}
+                rows={[
+                  ["Strategic Advisory Workshop","Digital Vision Roadmap, Steering Committee","Facilitated offsite or workshop with senior leadership; outcome is a decision or plan"],
+                  ["Governance Advisory","Digital Steering Committee","Ongoing structured advisory to design and run governance mechanisms"],
+                  ["Process Implementation","Map & Digitise Processes, Quality Checklists","End-to-end delivery of process change including design, tooling, and training"],
+                  ["Technology Deployment","ERP, CRM, Cloud, BI Dashboard","Full system implementation — requirements, build, UAT, go-live, hypercare"],
+                  ["Digital Marketing Implementation","Digital Presence, CRM","Agency or specialist-led build of digital acquisition channels"],
+                  ["Training Programme","Digital Skills Assessment","Structured L&D engagement with assessment, curriculum, and delivery"],
+                  ["Change Management Programme","Digital Champions","Organisational change engagement to embed new behaviours and capabilities"],
+                  ["Financial & Investment Advisory","Ring-Fenced Budget","CFO-level advisory on investment structure and ROI framing"],
+                  ["Data & Customer Research Advisory","Customer Segmentation","Research and analytics engagement to generate actionable customer intelligence"],
+                  ["Organisational Advisory & Coaching","Data-Driven Decision Rituals","Coaching engagement to embed new leadership habits"],
+                ]}
+              />
+              <p className="text-gray-600 text-sm mt-3">
+                Each engagement profile specifies 2–3 expert roles with detailed skill tags, enabling the company
+                to write an accurate brief when sourcing consultants, agencies, or system integrators.
+              </p>
             </Sub>
           </Section>
 
@@ -479,6 +521,69 @@ export default function FunctionalDoc() {
               Demo links are fully shareable URLs — both answer arrays and company context are encoded as URL parameters,
               so no session data is required. They can be used in presentations or shared externally without login.
             </InfoBox>
+          </Section>
+
+          {/* ── 12. Report Persistence & Sharing ── */}
+          <Section id="persistence" title="12. Report Persistence & Sharing">
+            <p className="text-gray-600 leading-relaxed mb-4">
+              D-TAS has no user accounts or database. Persistence is achieved through two browser-native mechanisms
+              that require no login and work immediately.
+            </p>
+
+            <Sub title="Auto-Save to Local Storage">
+              <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                Every time a results page is loaded, the report is automatically saved to the browser&apos;s
+                <code className="bg-gray-100 px-1 rounded">localStorage</code> under the key <code className="bg-gray-100 px-1 rounded">dtas_reports</code>.
+                Up to 10 reports are retained, deduplicated by answer fingerprint, with the most recent first.
+              </p>
+              <Table
+                headers={["Stored field","Description"]}
+                rows={[
+                  ["id","Unique timestamp-based ID (e.g. lrqt3a)"],
+                  ["savedAt","ISO timestamp of when the report was saved"],
+                  ["url","The full results URL including encoded answers and context — the reopenable link"],
+                  ["companyName","Company name from onboarding"],
+                  ["industry / size / timeline / focusArea","Onboarding context fields"],
+                  ["overallScore","Numeric overall maturity score (0–100)"],
+                  ["overallBand","Maturity band: Legacy / Siloed / Strategic / Future-Ready"],
+                ]}
+              />
+            </Sub>
+
+            <Sub title="My Saved Reports — Home Page">
+              <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                The home page shows a <strong>Your Saved Reports</strong> section whenever localStorage contains
+                at least one saved report. Each card displays: score ring, maturity band, company name, industry,
+                timeline, focus area, and date. Clicking <strong>View →</strong> reopens the full report.
+                Individual reports can be deleted with the ✕ button.
+              </p>
+              <InfoBox color="indigo">
+                Saved reports are device-specific (localStorage is per-browser). They are ideal for returning to
+                a report later on the same device. For sharing across devices, use the Copy Link feature.
+              </InfoBox>
+            </Sub>
+
+            <Sub title="Copy Shareable Link">
+              <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                The results page header includes a <strong>🔗 Copy Link</strong> button that copies the full
+                current URL to the clipboard. This URL encodes both the 75-question answer array and the company
+                context as URL parameters — making it completely self-contained and shareable.
+              </p>
+              <InfoBox color="green">
+                <strong>How the shareable link works:</strong> The URL carries all data needed to reconstruct
+                the full report — answers, company name, industry, size, timeline, and focus area. Opening the
+                link on any device, browser, or incognito window renders the identical report with all sections:
+                benchmark comparison, industry analysis, SWOT, and personalised NBA recommendations.
+              </InfoBox>
+            </Sub>
+
+            <Sub title="Report Auto-Save Indicator">
+              <p className="text-gray-600 text-sm">
+                A <strong>✓ Report saved</strong> badge appears in the results header when the report has been
+                successfully written to localStorage. This confirms the report will appear in the Saved Reports
+                section on the home page.
+              </p>
+            </Sub>
           </Section>
 
           {/* Back */}

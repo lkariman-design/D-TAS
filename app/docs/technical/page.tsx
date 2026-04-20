@@ -75,8 +75,9 @@ const TOC = [
   { id: "benchmark",   label: "10. Benchmark Layer" },
   { id: "pages",       label: "11. Pages & Components" },
   { id: "state",       label: "12. State Management" },
-  { id: "deploy",      label: "13. Deployment" },
-  { id: "extend",      label: "14. How to Extend" },
+  { id: "persistence", label: "13. Persistence & Sharing" },
+  { id: "deploy",      label: "14. Deployment" },
+  { id: "extend",      label: "15. How to Extend" },
 ];
 
 export default function TechnicalDoc() {
@@ -199,6 +200,7 @@ D-TAS/
 │   ├── app/                         ← App Router pages (NOT /src/app)
 │   │   ├── page.tsx                 ← Home / landing page
 │   │   ├── DemoLinks.tsx            ← Client component: 4 demo report buttons
+│   │   ├── SavedReports.tsx         ← Client component: localStorage saved reports panel
 │   │   ├── layout.tsx               ← Root layout (fonts, globals)
 │   │   ├── globals.css              ← Tailwind imports + band-pill classes
 │   │   ├── onboarding/
@@ -383,15 +385,55 @@ if (isIndustryOpportunityDim) score *= 1.20;
 if (dimScore > 70 && !isStrategicTarget) score *= 0.50; // penalty
               `}</Code>
             </Sub>
-            <Sub title="NBACard interface">
+            <Sub title="NBACard interface (updated)">
               <Code lang="typescript">{`
+interface ExpertProfile {
+  role: string;    // e.g. "ERP Implementation Consultant"
+  skills: string[]; // e.g. ["SAP B1", "Data migration", "UAT management"]
+}
+
 interface NBACard {
   id, rank, title, dimension, dimCode,
   what, whyNow, whatImproves, businessBenefit,
   effort: "Low" | "Medium" | "High",
   timeline: "0-3 months" | "3-6 months" | "6-12 months" | "12-24 months",
   capexBand: "< ₹50L" | "₹50L–2Cr" | "₹2–10Cr" | "> ₹10Cr",
-  doNothingRisk, score, tags
+  doNothingRisk: string,
+  // Engagement profile fields (added)
+  engagementType: string,      // e.g. "Technology Deployment (ERP Implementation)"
+  engagementDuration: string,  // e.g. "16–24 weeks"
+  experts: ExpertProfile[],    // 2–3 roles per card, each with skill tags
+  score: number,
+  tags: string[]
+}
+              `}</Code>
+            </Sub>
+            <Sub title="Action template engagement fields">
+              <p className="text-sm text-gray-600 mb-2">Each of the 15 action templates defines engagement metadata alongside the action content:</p>
+              <Code lang="typescript">{`
+{
+  dimCode: "D4", group: "systems",
+  title: "Core Business System Consolidation (ERP)",
+  // ... content fields ...
+  engagementType: "Technology Deployment (ERP Implementation)",
+  engagementDuration: "16–24 weeks (requirements → vendor selection → implementation → UAT → go-live)",
+  experts: [
+    {
+      role: "ERP Implementation Consultant",
+      skills: ["Tally Prime / Zoho Books / SAP B1", "Business requirements gathering",
+               "Data migration & cleansing", "Module configuration", "UAT management"]
+    },
+    {
+      role: "Change Manager",
+      skills: ["User adoption planning", "Training needs analysis",
+               "Resistance management", "Communications & rollout planning"]
+    },
+    {
+      role: "Project Manager (Technology)",
+      skills: ["IT project delivery (PMP / PRINCE2)", "Vendor management",
+               "Risk & issue management", "Timeline & budget control"]
+    }
+  ]
 }
               `}</Code>
             </Sub>
@@ -512,11 +554,12 @@ export function getBenchmarkLabel(score: number, bm: BenchmarkData): string
             <Table
               headers={["File","Type","Key responsibilities"]}
               rows={[
-                ["app/page.tsx","Server","Landing page, dimension pills, stats, CTA link, DemoLinks"],
+                ["app/page.tsx","Server","Landing page, dimension pills, stats, CTA link, DemoLinks, SavedReports"],
                 ["app/DemoLinks.tsx","Client","Computes pre-built answer arrays, renders 4 demo buttons"],
-                ["app/onboarding/OnboardingClient.tsx","Client","3-step controlled form, sessionStorage write, router.push"],
-                ["app/questionnaire/QuestionnaireClient.tsx","Client","XP/streak/badge state, single-question display, answer collection, navigation"],
-                ["app/results/ResultsClient.tsx","Client","Reads URL params + sessionStorage, runs all lib functions, renders all 7 sections"],
+                ["app/SavedReports.tsx","Client","Reads dtas_reports from localStorage, renders saved report cards with View/Delete"],
+                ["app/onboarding/OnboardingClient.tsx","Client","3-step controlled form, writes dtas_context to sessionStorage, clears dtas_progress, router.push"],
+                ["app/questionnaire/QuestionnaireClient.tsx","Client","XP/streak/badge state, answer collection, saves dtas_progress to sessionStorage, restores on mount"],
+                ["app/results/ResultsClient.tsx","Client","Reads URL params + sessionStorage/ctx, runs all lib functions, auto-saves to localStorage, renders all 7 sections"],
                 ["app/docs/functional/page.tsx","Server","Static functional specification document"],
                 ["app/docs/technical/page.tsx","Server","Static technical design document (this page)"],
               ]}
@@ -561,7 +604,109 @@ export default function QuestionnairePage() {
           </Section>
 
           {/* ── 13. Deployment ── */}
-          <Section id="deploy" title="13. Deployment Pipeline">
+          {/* ── 13. Persistence & Sharing ── */}
+          <Section id="persistence" title="13. Persistence & Sharing">
+            <Sub title="Questionnaire progress — sessionStorage">
+              <Code lang="typescript">{`
+// QuestionnaireClient.tsx
+
+// Restore on mount (only if answers exist — never overwrite a fresh start)
+useEffect(() => {
+  const saved = sessionStorage.getItem("dtas_progress");
+  if (saved) {
+    const { current: c, answers: a } = JSON.parse(saved);
+    if (Object.keys(a).length > 0) {
+      setCurrent(c);
+      setAnswers(a);
+      setXp(Object.keys(a).length * XP_PER_ANSWER); // recompute XP
+    }
+  }
+}, []); // mount only
+
+// Save on every state change
+useEffect(() => {
+  if (Object.keys(answers).length === 0) return;
+  sessionStorage.setItem("dtas_progress", JSON.stringify({ current, answers }));
+}, [current, answers]);
+
+// Clear on completion
+sessionStorage.removeItem("dtas_progress"); // before router.push to results
+
+// OnboardingClient.tsx — clear before fresh start
+sessionStorage.removeItem("dtas_progress"); // in handleStart()
+              `}</Code>
+            </Sub>
+            <Sub title="Report auto-save — localStorage">
+              <Code lang="typescript">{`
+// ResultsClient.tsx — runs after result + ctx are available
+
+useEffect(() => {
+  if (!result || !raw) return;
+  const entry = {
+    id: Date.now().toString(36),      // e.g. "lrqt3a"
+    savedAt: new Date().toISOString(),
+    url: window.location.href,        // full URL with ?answers= + ?ctx=
+    companyName: ctx?.companyName || "Assessment",
+    industry: ctx?.industry || "",
+    overallScore: Math.round(result.overallScore),
+    overallBand: result.overallBand,
+    // ... other ctx fields
+  };
+  const existing = JSON.parse(localStorage.getItem("dtas_reports") || "[]");
+  const deduped = existing.filter(r => !r.url.includes(raw.slice(0, 20)));
+  localStorage.setItem("dtas_reports",
+    JSON.stringify([entry, ...deduped].slice(0, 10))
+  );
+  setReportSaved(true); // triggers "✓ Report saved" badge in header
+}, [result, raw, ctx]);
+              `}</Code>
+            </Sub>
+            <Sub title="SavedReports component — reading localStorage">
+              <Code lang="typescript">{`
+// app/SavedReports.tsx — Client component
+
+useEffect(() => {
+  const saved = JSON.parse(localStorage.getItem("dtas_reports") || "[]");
+  setReports(saved);
+}, []);
+
+// Delete handler
+const deleteReport = (id: string) => {
+  const updated = reports.filter(r => r.id !== id);
+  setReports(updated);
+  localStorage.setItem("dtas_reports", JSON.stringify(updated));
+};
+              `}</Code>
+            </Sub>
+            <Sub title="Copy Link — clipboard API">
+              <Code lang="typescript">{`
+// Results page header button
+<button onClick={() => {
+  navigator.clipboard.writeText(window.location.href);
+  setCopied(true);
+  setTimeout(() => setCopied(false), 2500);
+}}>
+  {copied ? "✓ Link copied!" : "🔗 Copy Link"}
+</button>
+
+// The URL already contains everything needed:
+// /results?answers=[1,2,3...]&ctx=%7B%22companyName%22%3A%22...%22%7D
+// Opening this URL on any device renders the full report identically.
+              `}</Code>
+            </Sub>
+            <Table
+              headers={["Key","Storage","Written by","Read by","Cleared by"]}
+              rows={[
+                ["dtas_context","sessionStorage","OnboardingClient (on submit)","ResultsClient (on mount, fallback to ?ctx= param)","Never (expires with session)"],
+                ["dtas_progress","sessionStorage","QuestionnaireClient (on every answer)","QuestionnaireClient (on mount)","Questionnaire complete · Onboarding fresh start"],
+                ["dtas_reports","localStorage","ResultsClient (on results load)","SavedReports (home page, on mount)","User clicks ✕ on a saved report"],
+                ["?answers= (URL)","URL param","QuestionnaireClient (on complete)","ResultsClient (useSearchParams)","Never — encoded in URL permanently"],
+                ["?ctx= (URL)","URL param","DemoLinks (home page)","ResultsClient (priority over sessionStorage)","Never — encoded in URL permanently"],
+              ]}
+            />
+          </Section>
+
+          <Section id="deploy" title="14. Deployment Pipeline">
             <Sub title="Flow">
               <Code lang="text">{`
 git push origin main
@@ -594,7 +739,7 @@ Vercel CDN → https://d-tas.vercel.app   (~60 seconds total)
           </Section>
 
           {/* ── 14. How to Extend ── */}
-          <Section id="extend" title="14. How to Extend">
+          <Section id="extend" title="15. How to Extend">
             <Sub title="Add a new question to an existing dimension">
               <Code lang="text">{`
 1. Add the question object to src/data/questionnaire.json
