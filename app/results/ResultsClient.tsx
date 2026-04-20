@@ -238,6 +238,29 @@ function NBACardTile({ card }: { card: NBACard }) {
             <p className="text-red-700 text-sm leading-relaxed">{card.doNothingRisk}</p>
           </div>
 
+          {/* ── Project Engagement ── */}
+          <div className="bg-violet-50 rounded-xl p-4 border border-violet-100 space-y-3">
+            <div className="flex items-center justify-between gap-2 flex-wrap">
+              <div className="text-xs font-bold text-violet-700 uppercase tracking-wide">🤝 Project Engagement</div>
+              <div className="flex gap-2 flex-wrap">
+                <span className="text-xs bg-violet-100 text-violet-800 px-2.5 py-0.5 rounded-full font-medium">{card.engagementType}</span>
+                <span className="text-xs bg-gray-100 text-gray-600 px-2.5 py-0.5 rounded-full">⏱ {card.engagementDuration}</span>
+              </div>
+            </div>
+            <div className="space-y-3">
+              {card.experts.map((expert, i) => (
+                <div key={i} className="bg-white rounded-lg p-3 border border-violet-100">
+                  <div className="text-xs font-bold text-gray-800 mb-1.5">👤 {expert.role}</div>
+                  <div className="flex flex-wrap gap-1">
+                    {expert.skills.map(skill => (
+                      <span key={skill} className="text-xs bg-indigo-50 text-indigo-700 border border-indigo-100 px-2 py-0.5 rounded-full">{skill}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {card.tags.length > 0 && (
             <div className="flex flex-wrap gap-1">
               {card.tags.map(t => (
@@ -270,6 +293,8 @@ export default function ResultsClient() {
   const raw = params.get("answers");
 
   const [ctx, setCtx] = useState<OrgContext | null>(null);
+  const [copied, setCopied] = useState(false);
+  const [reportSaved, setReportSaved] = useState(false);
 
   useEffect(() => {
     // URL param takes priority (demo links); fall back to sessionStorage
@@ -312,6 +337,30 @@ export default function ResultsClient() {
       swot?.opportunityDimCodes ?? []
     );
   }, [result, ctx, swot]);
+
+  // Auto-save report to localStorage for "My Reports" on home page
+  useEffect(() => {
+    if (!result || !raw) return;
+    try {
+      const reportId = Date.now().toString(36);
+      const entry = {
+        id: reportId,
+        savedAt: new Date().toISOString(),
+        url: window.location.href,
+        companyName: ctx?.companyName || "Assessment",
+        industry: ctx?.industry || "",
+        size: ctx?.size || "",
+        timeline: ctx?.timeline || "",
+        focusArea: ctx?.focusArea || "",
+        overallScore: Math.round(result.overallScore),
+        overallBand: result.overallBand,
+      };
+      const existing: typeof entry[] = JSON.parse(localStorage.getItem("dtas_reports") || "[]");
+      const deduped = existing.filter(r => !r.url.includes(raw.slice(0, 20)));
+      localStorage.setItem("dtas_reports", JSON.stringify([entry, ...deduped].slice(0, 10)));
+      setReportSaved(true);
+    } catch { /* localStorage unavailable */ }
+  }, [result, raw, ctx]);
 
   if (!result) {
     return (
@@ -365,7 +414,21 @@ export default function ResultsClient() {
               )}
             </div>
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-2 flex-wrap">
+            {reportSaved && (
+              <span className="flex items-center gap-1.5 px-3 py-1.5 bg-green-500/20 border border-green-400/30 text-green-300 text-xs rounded-lg">
+                ✓ Report saved
+              </span>
+            )}
+            <button
+              onClick={() => {
+                navigator.clipboard.writeText(window.location.href);
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2500);
+              }}
+              className="px-4 py-1.5 border border-white/30 text-white text-sm rounded-lg hover:bg-white/10 transition-colors">
+              {copied ? "✓ Link copied!" : "🔗 Copy Link"}
+            </button>
             <button onClick={() => window.print()}
                     className="px-4 py-1.5 border border-white/30 text-white text-sm rounded-lg hover:bg-white/10 transition-colors">
               Print / PDF

@@ -41,8 +41,8 @@ export default function OnboardingClient() {
 
   const handleStart = () => {
     if (!step3Valid) return;
-    // Save context to sessionStorage for results page
     sessionStorage.setItem("dtas_context", JSON.stringify(form));
+    sessionStorage.removeItem("dtas_progress"); // clear any previous assessment
     router.push("/questionnaire");
   };
 

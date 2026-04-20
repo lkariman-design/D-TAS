@@ -1,5 +1,6 @@
 import Link from "next/link";
 import DemoLinks from "./DemoLinks";
+import SavedReports from "./SavedReports";
 
 const DIMENSIONS = [
   { label: "Strategy & Leadership",       icon: "🎯" },
@@ -77,6 +78,7 @@ export default function Home() {
       </div>
 
       <DemoLinks />
+      <SavedReports />
     </main>
   );
 }

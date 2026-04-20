@@ -71,6 +71,30 @@ export default function QuestionnaireClient() {
     .filter(x => answers[x.id] !== undefined).length;
   const dimTotal = dimMeta.n_questions;
 
+  // Restore progress if user navigated away accidentally
+  useEffect(() => {
+    try {
+      const saved = sessionStorage.getItem("dtas_progress");
+      if (saved) {
+        const { current: c, answers: a } = JSON.parse(saved);
+        if (Object.keys(a).length > 0) {
+          setCurrent(c);
+          setAnswers(a);
+          setXp(Object.keys(a).length * XP_PER_ANSWER);
+        }
+      }
+    } catch { /* ignore */ }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Save progress on every answer
+  useEffect(() => {
+    if (Object.keys(answers).length === 0) return;
+    try {
+      sessionStorage.setItem("dtas_progress", JSON.stringify({ current, answers }));
+    } catch { /* ignore */ }
+  }, [current, answers]);
+
   // Trigger entering animation on mount
   useEffect(() => { setEntering(true); setTimeout(()=>setEntering(false),400); }, [current]);
 
@@ -127,7 +151,8 @@ export default function QuestionnaireClient() {
         setCurrent(c => c + 1);
       }, 380);
     } else {
-      // Done — encode answers and navigate
+      // Done — clear saved progress and navigate to results
+      sessionStorage.removeItem("dtas_progress");
       const arr = allQ.map(x => newAnswers[x.id] ?? 1);
       const encoded = encodeURIComponent(JSON.stringify(arr));
       router.push(`/results?answers=${encoded}`);

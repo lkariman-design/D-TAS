@@ -1,5 +1,9 @@
 import type { ScoreResult } from "./scorer";
-import questionnaire from "@/src/data/questionnaire.json";
+
+export interface ExpertProfile {
+  role: string;
+  skills: string[];
+}
 
 export interface NBACard {
   id: string;
@@ -15,20 +19,26 @@ export interface NBACard {
   timeline: "0-3 months" | "3-6 months" | "6-12 months" | "12-24 months";
   capexBand: "< ₹50L" | "₹50L–2Cr" | "₹2–10Cr" | "> ₹10Cr";
   doNothingRisk: string;
+  // Engagement
+  engagementType: string;
+  engagementDuration: string;
+  experts: ExpertProfile[];
   score: number;
   tags: string[];
 }
 
 export type Timeline = "6 months" | "12 months" | "24 months" | "36+ months";
-export type FocusArea = string; // dimension label
+export type FocusArea = string;
 
-// Action templates keyed by (dimCode, group slug)
 const ACTION_TEMPLATES: {
   dimCode: string; group: string; title: string; what: string; whyNow: string;
   whatImproves: string; businessBenefit: string; effort: "Low"|"Medium"|"High";
-  timelineMonths: number; capexBand: NBACard["capexBand"]; doNothingRisk: string; tags: string[];
+  timelineMonths: number; capexBand: NBACard["capexBand"]; doNothingRisk: string;
+  engagementType: string; engagementDuration: string;
+  experts: ExpertProfile[];
+  tags: string[];
 }[] = [
-  // D1 — Strategy & Leadership
+  // ── D1 Strategy & Leadership ────────────────────────────────────────────────
   {
     dimCode:"D1", group:"vision",
     title:"Define a Digital Vision & 90-Day Roadmap",
@@ -38,6 +48,12 @@ const ACTION_TEMPLATES: {
     businessBenefit:"Reduces initiative duplication, cuts decision lag by ~30%, aligns team effort toward one measurable outcome.",
     effort:"Low", timelineMonths:3, capexBand:"< ₹50L",
     doNothingRisk:"Digital spend continues without coordination; teams pull in different directions and ROI stays invisible.",
+    engagementType:"Strategic Advisory Workshop",
+    engagementDuration:"2-day offsite + 4-week roadmap finalisation",
+    experts:[
+      { role:"Digital Transformation Consultant", skills:["Digital strategy","Roadmap facilitation","OKR framework","Executive alignment","Change leadership"] },
+      { role:"Business Strategy Advisor", skills:["Strategic planning","Competitive analysis","Board-level communication","Vision articulation"] },
+    ],
     tags:["Quick win","Leadership","Strategy"]
   },
   {
@@ -49,6 +65,12 @@ const ACTION_TEMPLATES: {
     businessBenefit:"Faster decision cycles translate directly to faster revenue realisation from digital investments.",
     effort:"Low", timelineMonths:2, capexBand:"< ₹50L",
     doNothingRisk:"Digital decisions default to the loudest voice; accountability is diffuse and budgets get reallocated.",
+    engagementType:"Governance Advisory",
+    engagementDuration:"3-week setup + ongoing monthly facilitation",
+    experts:[
+      { role:"Governance & Organisational Design Consultant", skills:["Digital governance frameworks","Committee charter design","KPI / OKR design","Executive facilitation"] },
+      { role:"Change Manager", skills:["Stakeholder engagement","Communication planning","Meeting cadence design","Accountability frameworks"] },
+    ],
     tags:["Governance","Leadership","Quick win"]
   },
   {
@@ -60,6 +82,12 @@ const ACTION_TEMPLATES: {
     businessBenefit:"Identify emerging customer expectations before they become competitive threats; redirect product/service investments earlier.",
     effort:"Low", timelineMonths:2, capexBand:"< ₹50L",
     doNothingRisk:"Strategy stays inside-out; you react to market shifts instead of anticipating them.",
+    engagementType:"Strategic Intelligence Advisory",
+    engagementDuration:"2-week setup + quarterly 1-day reviews",
+    experts:[
+      { role:"Market Research & Intelligence Analyst", skills:["Competitive benchmarking","Industry analysis","Trend mapping","PESTLE analysis","NASSCOM/IBEF reports"] },
+      { role:"Digital Strategy Consultant", skills:["External awareness frameworks","Strategic planning","Scenario planning","Board reporting"] },
+    ],
     tags:["External Awareness","Strategy","Low cost"]
   },
   {
@@ -71,10 +99,16 @@ const ACTION_TEMPLATES: {
     businessBenefit:"Enables continuous investment rhythm; avoids stop-start execution that erodes ROI.",
     effort:"Low", timelineMonths:1, capexBand:"< ₹50L",
     doNothingRisk:"Digital initiatives compete with operations for the same pool; transformation loses every time there is a short-term pressure.",
+    engagementType:"Financial & Investment Advisory",
+    engagementDuration:"1-week assessment + CFO workshop",
+    experts:[
+      { role:"CFO Advisory / Financial Strategy Consultant", skills:["Digital investment planning","Budget structuring","ROI & NPV frameworks","Board presentation","Capital allocation"] },
+      { role:"Digital Transformation Consultant", skills:["Investment prioritisation","Business case development","Programme financing","Benefit realisation tracking"] },
+    ],
     tags:["Resource","Budget","Foundation"]
   },
 
-  // D2 — Operations & Supply Chain
+  // ── D2 Operations & Supply Chain ────────────────────────────────────────────
   {
     dimCode:"D2", group:"process",
     title:"Map & Digitise Your Top 3 Core Processes",
@@ -84,6 +118,13 @@ const ACTION_TEMPLATES: {
     businessBenefit:"10–15% reduction in operational overhead; real-time status visibility for leadership.",
     effort:"Medium", timelineMonths:6, capexBand:"₹50L–2Cr",
     doNothingRisk:"Process bottlenecks compound as volume grows; the cost of manual errors scales with revenue.",
+    engagementType:"Process Implementation Project",
+    engagementDuration:"8–12 weeks (discovery → design → build → train)",
+    experts:[
+      { role:"Business Process Consultant", skills:["Process mapping (BPMN/VSM)","Lean / Six Sigma","Workflow automation","As-is / to-be analysis","Change management"] },
+      { role:"ERP / Digital Workflow Specialist", skills:["Zoho Operations","ERPNext","Monday.com","Process digitisation","System configuration"] },
+      { role:"Project Manager", skills:["Agile project delivery","Stakeholder management","User acceptance testing","Training delivery"] },
+    ],
     tags:["Process","Automation","Efficiency"]
   },
   {
@@ -95,6 +136,12 @@ const ACTION_TEMPLATES: {
     businessBenefit:"Reduces procurement cycle time by 3–5 days; eliminates duplicate payments; improves vendor relationships.",
     effort:"Medium", timelineMonths:5, capexBand:"₹50L–2Cr",
     doNothingRisk:"Manual procurement remains a hidden cost centre that grows opaque as vendor count increases.",
+    engagementType:"Technology Deployment",
+    engagementDuration:"6–8 weeks",
+    experts:[
+      { role:"Supply Chain / Procurement Consultant", skills:["Digital procurement design","Vendor onboarding","PO workflow design","Supplier relationship management"] },
+      { role:"Full-Stack Developer / Integration Specialist", skills:["WhatsApp Business API","Web portal development","REST API integration","ERP connectors","Mobile-first UI"] },
+    ],
     tags:["Supply Chain","Vendor","Automation"]
   },
   {
@@ -106,10 +153,16 @@ const ACTION_TEMPLATES: {
     businessBenefit:"Avoid non-compliance penalties; reduce rework costs by 25%; pass audits faster.",
     effort:"Low", timelineMonths:3, capexBand:"< ₹50L",
     doNothingRisk:"Paper trails are incomplete; compliance gaps surface only during audits when remediation is expensive.",
+    engagementType:"Process Implementation",
+    engagementDuration:"4–6 weeks",
+    experts:[
+      { role:"Quality Management Consultant", skills:["ISO 9001 / QMS standards","Digital audit trails","Non-conformance management","Regulatory compliance (FSSAI / BIS / CDSCO)"] },
+      { role:"Digital Forms & Workflow Specialist", skills:["KoBoToolbox / FormStack","Mobile form design","Escalation workflow logic","Dashboard reporting"] },
+    ],
     tags:["Quality","Compliance","Low cost"]
   },
 
-  // D3 — Sales & Marketing
+  // ── D3 Sales & Marketing ────────────────────────────────────────────────────
   {
     dimCode:"D3", group:"digital-channels",
     title:"Launch a Conversion-Optimised Digital Presence",
@@ -119,6 +172,13 @@ const ACTION_TEMPLATES: {
     businessBenefit:"Measurable increase in inbound leads; reduces dependence on referral-only pipeline.",
     effort:"Medium", timelineMonths:4, capexBand:"₹50L–2Cr",
     doNothingRisk:"Competitors with stronger digital presence capture the research phase; your sales team is always playing catch-up.",
+    engagementType:"Digital Marketing Implementation",
+    engagementDuration:"6–8 weeks (strategy → design → build → launch)",
+    experts:[
+      { role:"Digital Marketing Strategist", skills:["SEO / SEM","Google Analytics 4","CRO (Conversion Rate Optimisation)","Content strategy","B2B lead generation"] },
+      { role:"Web Designer / Developer", skills:["UX/UI design","Next.js / WordPress / Webflow","Lead capture & form integration","Core Web Vitals optimisation"] },
+      { role:"Social Media & Brand Specialist", skills:["LinkedIn B2B marketing","Google My Business","Brand positioning","Content calendar management"] },
+    ],
     tags:["Digital Channels","Marketing","Lead Generation"]
   },
   {
@@ -130,6 +190,12 @@ const ACTION_TEMPLATES: {
     businessBenefit:"15–25% improvement in conversion rates; accurate revenue forecasting.",
     effort:"Low", timelineMonths:2, capexBand:"< ₹50L",
     doNothingRisk:"Sales outcomes remain person-dependent and non-transferable; losing a salesperson means losing relationship context.",
+    engagementType:"Technology Deployment",
+    engagementDuration:"4–6 weeks (config → data migration → training → go-live)",
+    experts:[
+      { role:"CRM Implementation Consultant", skills:["HubSpot / Zoho CRM / Freshsales","Sales process design","Pipeline stage configuration","Workflow automation","CRM data migration"] },
+      { role:"Sales Enablement Trainer", skills:["Sales methodology (SPIN / Challenger)","CRM user adoption","Follow-up cadence design","Reporting & forecasting"] },
+    ],
     tags:["CRM","Sales","Quick win"]
   },
   {
@@ -141,10 +207,16 @@ const ACTION_TEMPLATES: {
     businessBenefit:"Higher average order value; reduced churn through proactive intervention for at-risk segments.",
     effort:"Low", timelineMonths:2, capexBand:"< ₹50L",
     doNothingRisk:"Sales team pitches the same product to every customer; misses upsell and loses price-sensitive customers to cheaper alternatives.",
+    engagementType:"Data & Customer Research Advisory",
+    engagementDuration:"4–6 weeks (research → analysis → segmentation → playbook)",
+    experts:[
+      { role:"Customer Experience (CX) Analyst", skills:["Customer segmentation","NPS / CSAT design","Survey design & analysis","Persona development","Journey mapping"] },
+      { role:"Data Analyst", skills:["Excel / Python data analysis","Customer lifetime value (CLV)","Cohort analysis","Tableau / Looker Studio","Statistical segmentation"] },
+    ],
     tags:["Customer Intelligence","Data","Sales"]
   },
 
-  // D4 — Technology & Infrastructure
+  // ── D4 Technology & Infrastructure ─────────────────────────────────────────
   {
     dimCode:"D4", group:"systems",
     title:"Core Business System Consolidation (ERP/Accounting)",
@@ -154,6 +226,13 @@ const ACTION_TEMPLATES: {
     businessBenefit:"Real-time financial visibility; faster month-end close (5 days → 2 days); audit-ready records.",
     effort:"High", timelineMonths:9, capexBand:"₹2–10Cr",
     doNothingRisk:"Scaling operations without integrated systems creates exponential reconciliation overhead; errors compound.",
+    engagementType:"Technology Deployment (ERP Implementation)",
+    engagementDuration:"16–24 weeks (requirements → vendor selection → implementation → UAT → go-live)",
+    experts:[
+      { role:"ERP Implementation Consultant", skills:["Tally Prime / Zoho Books / SAP B1 / Oracle NetSuite","Business requirements gathering","Data migration & cleansing","Module configuration","UAT management"] },
+      { role:"Change Manager", skills:["User adoption planning","Training needs analysis","Resistance management","Communications & rollout planning"] },
+      { role:"Project Manager (Technology)", skills:["IT project delivery (PMP / PRINCE2)","Vendor management","Risk & issue management","Timeline & budget control"] },
+    ],
     tags:["ERP","Systems","Foundation"]
   },
   {
@@ -165,6 +244,12 @@ const ACTION_TEMPLATES: {
     businessBenefit:"Business continuity assurance; enables remote work; reduces hardware CAPEX by 40%.",
     effort:"Medium", timelineMonths:5, capexBand:"₹50L–2Cr",
     doNothingRisk:"Single-point hardware failures cause unplanned downtime; zero backup means complete data loss exposure.",
+    engagementType:"Technology Deployment",
+    engagementDuration:"8–12 weeks (assessment → architecture → migration → security hardening)",
+    experts:[
+      { role:"Cloud Architect / Cloud Engineer", skills:["AWS / Azure / GCP","Cloud migration planning","Infrastructure as Code (Terraform)","Cost optimisation","DR & backup design"] },
+      { role:"Cybersecurity Consultant", skills:["Security baseline assessment","MFA & identity management","Staff security awareness training","Incident response planning","VAPT (Vulnerability Assessment)"] },
+    ],
     tags:["Cloud","Security","Infrastructure"]
   },
   {
@@ -176,10 +261,16 @@ const ACTION_TEMPLATES: {
     businessBenefit:"Faster identification of underperforming areas; 40% reduction in reporting effort.",
     effort:"Medium", timelineMonths:4, capexBand:"₹50L–2Cr",
     doNothingRisk:"Strategic decisions are based on stale data; opportunities and risks surface too late to act on.",
+    engagementType:"Technology Deployment (BI & Analytics)",
+    engagementDuration:"6–8 weeks (KPI design → data modelling → dashboard build → training)",
+    experts:[
+      { role:"BI Developer / Data Engineer", skills:["Power BI / Looker Studio / Zoho Analytics","Data modelling (star schema)","DAX / SQL","ERP & CRM data connectors","Dashboard UX design"] },
+      { role:"Business Analyst", skills:["KPI definition & prioritisation","Requirements gathering","Stakeholder interviews","Data storytelling","Report governance"] },
+    ],
     tags:["Analytics","BI","Data"]
   },
 
-  // D5 — Skills & Capabilities
+  // ── D5 Skills & Capabilities ────────────────────────────────────────────────
   {
     dimCode:"D5", group:"training",
     title:"Digital Skills Baseline Assessment & Training Plan",
@@ -189,6 +280,12 @@ const ACTION_TEMPLATES: {
     businessBenefit:"Higher adoption of existing digital tools (typical uplift: 35%); reduces shadow IT and workarounds.",
     effort:"Low", timelineMonths:3, capexBand:"< ₹50L",
     doNothingRisk:"New tools gather dust; team reverts to manual processes; digital investments deliver negative ROI.",
+    engagementType:"Training Programme",
+    engagementDuration:"2-week assessment + 6-month structured delivery",
+    experts:[
+      { role:"L&D (Learning & Development) Consultant", skills:["Skills gap analysis","Competency framework design","Learning path design","LMS platform management (Moodle / TalentLMS)","Certification planning"] },
+      { role:"Digital Skills Trainer", skills:["Google Workspace / Microsoft 365","Digital tools facilitation","e-Learning content development","Virtual training delivery","Adult learning principles"] },
+    ],
     tags:["Training","People","Quick win"]
   },
   {
@@ -200,6 +297,12 @@ const ACTION_TEMPLATES: {
     businessBenefit:"Faster adoption cycles; self-sustaining improvement culture; reduced dependency on external consultants.",
     effort:"Low", timelineMonths:3, capexBand:"< ₹50L",
     doNothingRisk:"Digital change remains a leadership project rather than a company capability; reverts when leadership attention shifts.",
+    engagementType:"Change Management Programme",
+    engagementDuration:"8–12 weeks setup + ongoing quarterly coaching",
+    experts:[
+      { role:"Change Management Consultant", skills:["Champion network design","Prosci ADKAR methodology","Peer learning frameworks","Adoption metrics & dashboards","Organisational change management"] },
+      { role:"Internal Capability Coach / Trainer", skills:["Train-the-trainer facilitation","Knowledge transfer design","Digital adoption coaching","Feedback loop design"] },
+    ],
     tags:["Culture","Change","People","Quick win"]
   },
   {
@@ -211,11 +314,16 @@ const ACTION_TEMPLATES: {
     businessBenefit:"Decisions are made 5× faster and with higher confidence; accountability improves.",
     effort:"Low", timelineMonths:1, capexBand:"< ₹50L",
     doNothingRisk:"Data systems exist but are ignored; reverts to gut-feel decisions despite digital investment.",
+    engagementType:"Organisational Advisory & Coaching",
+    engagementDuration:"2-week ritual design + 4-week embedding & coaching",
+    experts:[
+      { role:"Management Consultant / Executive Advisor", skills:["Decision-making frameworks","Meeting facilitation design","OKR / KPI governance","Executive coaching","Accountability structures"] },
+      { role:"Business Analyst", skills:["Dashboard interpretation","Data storytelling","Process documentation","Meeting facilitation","Insights communication"] },
+    ],
     tags:["Leadership","Data","Habits","Quick win"]
   },
 ];
 
-// Effort × timeline fit scoring
 const TIMELINE_FIT: Record<Timeline, number[]> = {
   "6 months":    [1, 3, 6],
   "12 months":   [1, 3, 6, 9, 12],
@@ -237,56 +345,38 @@ export function generateNBACards(
   swotWeakDimCodes: string[] = [],
   industryOpportunityDimCodes: string[] = []
 ): NBACard[] {
-  const benchmarks = [48, 44, 42, 39, 41]; // p50 per dimension
+  const benchmarks = [48, 44, 42, 39, 41];
 
-  // Score each action template
-  const scored = ACTION_TEMPLATES.map((tpl, i) => {
+  const scored = ACTION_TEMPLATES.map((tpl) => {
     const dim = result.dimensions.find((d) => d.code === tpl.dimCode);
     if (!dim) return null;
 
     const dimScore = dim.score;
     const bmP50 = benchmarks[["D1","D2","D3","D4","D5"].indexOf(tpl.dimCode)];
-    const gapSeverity = Math.max(0, bmP50 - dimScore); // how far below median
+    const gapSeverity = Math.max(0, bmP50 - dimScore);
 
-    // Base score
     let score = gapSeverity * 0.5 + (100 - dimScore) * 0.3;
 
-    // +35% boost if matches focus dimension
     const dimLabel = dim.label.toLowerCase();
-    if (focusDimLabel && dimLabel.includes(focusDimLabel.toLowerCase().split(" ")[0])) {
-      score *= 1.35;
-    }
+    if (focusDimLabel && dimLabel.includes(focusDimLabel.toLowerCase().split(" ")[0])) score *= 1.35;
 
-    // +20% boost if fits within timeline
     const fitMonths = TIMELINE_FIT[timeline] ?? TIMELINE_FIT["12 months"];
-    if (fitMonths.includes(tpl.timelineMonths)) {
-      score *= 1.20;
-    }
+    if (fitMonths.includes(tpl.timelineMonths)) score *= 1.20;
 
-    // +25% boost if dimension is a SWOT weakness (below p25 peer benchmark)
-    if (swotWeakDimCodes.includes(tpl.dimCode)) {
-      score *= 1.25;
-    }
+    if (swotWeakDimCodes.includes(tpl.dimCode)) score *= 1.25;
+    if (industryOpportunityDimCodes.includes(tpl.dimCode)) score *= 1.20;
 
-    // +20% boost if dimension aligns with a high-urgency industry opportunity
-    if (industryOpportunityDimCodes.includes(tpl.dimCode)) {
-      score *= 1.20;
-    }
-
-    // Penalise if dimension is already strong (score > 70) and not focus area or industry opportunity
     const isStrategicTarget =
       focusDimLabel.toLowerCase().includes(dimLabel.split(" ")[0].toLowerCase()) ||
       industryOpportunityDimCodes.includes(tpl.dimCode) ||
       swotWeakDimCodes.includes(tpl.dimCode);
-    if (dimScore > 70 && !isStrategicTarget) {
-      score *= 0.5;
-    }
+    if (dimScore > 70 && !isStrategicTarget) score *= 0.5;
 
     return { tpl, score, dim };
   }).filter(Boolean) as { tpl: typeof ACTION_TEMPLATES[0]; score: number; dim: ScoreResult["dimensions"][0] }[];
 
-  // Sort by score, deduplicate per dimension (max 2 per dim unless it's the focus)
   scored.sort((a, b) => b.score - a.score);
+
   const dimCounts: Record<string, number> = {};
   const maxPerDim = (code: string) => {
     const label = result.dimensions.find(d => d.code === code)?.label ?? "";
@@ -317,6 +407,9 @@ export function generateNBACards(
     timeline: timelineCard(item.tpl.timelineMonths),
     capexBand: item.tpl.capexBand,
     doNothingRisk: item.tpl.doNothingRisk,
+    engagementType: item.tpl.engagementType,
+    engagementDuration: item.tpl.engagementDuration,
+    experts: item.tpl.experts,
     score: Math.round(item.score),
     tags: item.tpl.tags,
   }));
