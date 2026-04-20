@@ -33,7 +33,12 @@ export default function SavedReports() {
   useEffect(() => {
     try {
       const saved = JSON.parse(localStorage.getItem("dtas_reports") || "[]");
-      setReports(saved);
+      // Strip any demo/shared-link reports that slipped in before the isDemo guard
+      const real = saved.filter((r: SavedReport) => !r.url.includes("ctx="));
+      if (real.length !== saved.length) {
+        localStorage.setItem("dtas_reports", JSON.stringify(real));
+      }
+      setReports(real);
     } catch { /* localStorage unavailable */ }
   }, []);
 
