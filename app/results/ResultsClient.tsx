@@ -295,6 +295,8 @@ export default function ResultsClient() {
   const [ctx, setCtx] = useState<OrgContext | null>(null);
   const [copied, setCopied] = useState(false);
   const [reportSaved, setReportSaved] = useState(false);
+  // true when opened via a demo/shared link — these must not appear in Saved Reports
+  const isDemo = !!params.get("ctx");
 
   useEffect(() => {
     // URL param takes priority (demo links); fall back to sessionStorage
@@ -340,7 +342,7 @@ export default function ResultsClient() {
 
   // Auto-save report to localStorage for "My Reports" on home page
   useEffect(() => {
-    if (!result || !raw) return;
+    if (!result || !raw || isDemo) return;
     try {
       const reportId = Date.now().toString(36);
       const entry = {
